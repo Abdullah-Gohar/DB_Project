@@ -1,0 +1,92 @@
+.title{
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    display: inline-block;
+    width: 89%;
+    text-align: center;
+}
+
+.login-button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+}
+
+.login{
+    width: 10%;
+}
+
+.header2{
+    background-color: darkgray;
+    /* padding: -20px,-30px,-30px,-30px; */
+    margin: -20px,-30px,-30px,-30px;
+    /* border: -20px,-30px,-30px,-30px;     */
+    /* background-image: url("bg.jpg"); */
+}
+
+body{
+    background-color:aliceblue;
+}
+
+.NavButton{
+    float:left;
+    width: 20%;
+    background-color:lavender;
+    border-color: black;
+    border-radius: 5px;
+    margin-left: 2%;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.NavBar{
+    overflow: hidden;
+    background-color:darkgrey;
+    padding: 2%;
+}
+
+#current{
+    background-color: cadetblue;
+}
+
+.About-Us{
+    width:100%;
+    background-color: aqua;
+    overflow: hidden;
+}
+
+.About-Us-Para{
+    width:50%;
+    display:inline-block;
+    text-align: center;
+     border:black;
+    border-radius:5px;
+    border-width: 5px;
+    border-style: double;
+}
+.About-Us-Pic{
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    border:black;
+    border-radius:5px;
+    border-width: 5px;
+    border-style: double;
+
+}
+
+#conatiner div{
+    margin:0%;
+}
+
+#conatiner button{
+    margin:0%;
+}
