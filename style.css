@@ -90,3 +90,12 @@ body{
 #conatiner button{
     margin:0%;
 }
+
+.NavButton:hover{
+    background-color: #4CAF50;
+    cursor:pointer;
+}
+
+.login-button:hover{
+    cursor: pointer;
+}
