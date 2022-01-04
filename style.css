@@ -32,7 +32,7 @@
 }
 
 body{
-    background-color:grey;
+    background-color:white;
     margin:0;
     padding:0;
     height: 100%;
@@ -46,19 +46,27 @@ body{
 .NavButton{
     float:left;
     width: 20%;
-    background-color:lavender;
+    /* background-color:lavender; */
     border-color: black;
-    border-radius: 5px;
+    border-top: 0;
+    border-bottom: 30%;
+    border-left:0 ;
+    border-right: 20%;
+    /* border-radius: 5px; */
     margin-left: 2%;
     text-align: center;
     padding: 10px;
-
+    font-size: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 400;
 }
 
 .NavBar{
     overflow: hidden;
     /* background-color:darkgrey; */
-    padding: 2%;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
 }
 
 #current{
@@ -69,7 +77,7 @@ body{
     width:100%;
     /* background-color: aqua; */
     /* overflow: hidden; */
-    margin: 10px 0px 10% 0px;
+    margin: 0 0px 10% 0px;
     border-style:solid;
     /* border-width: 20%; */
     border-color: black;
