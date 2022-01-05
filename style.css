@@ -3,8 +3,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     display: inline-block;
-    width: 89%;
+    width: 79%;
     text-align: center;
+    padding-left: 10%;
 }
 
 .login-button{
@@ -44,8 +45,8 @@ body{
 }
 
 .NavButton{
-    float:left;
-    width: 20%;
+    /* float:left; */
+    width: 22%;
     /* background-color:lavender; */
     border-color: black;
     border-top: 0;
@@ -79,6 +80,7 @@ body{
     /* overflow: hidden; */
     margin: 0 0px 10% 0px;
     border-style:solid;
+    padding-top: 3%;
     /* border-width: 20%; */
     border-color: black;
     border-top: 20%;
@@ -90,7 +92,7 @@ body{
 }
 
 .About-Us-Para{
-    width:55%;
+    width:50%;
     display:inline-block;
     text-align: center;
     /* border:black;
@@ -99,11 +101,12 @@ body{
     border-style: double; */
     margin: 0 auto;
     padding-left: 10%;
-    font-size: 150%;
+    padding-right: 10%;
+    font-size: 100%;
     
 }
 .About-Us-Pic{
-    width: 25%;
+    width: 20%;
     display: inline-block;
     text-align: right;
     /* border:black;
@@ -111,7 +114,7 @@ body{
     border-width: 5px;
     border-style: double; */
     float:right;
-    padding-right: 50px;
+    padding-right: 10%;
     margin-right: 0%;
     height:40%;
 
