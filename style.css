@@ -213,16 +213,20 @@ img{
 }
 .Service-Slider #left{
     float:left;
-    background-color: aliceblue;
-    border-color: black;
-    border-style: solid;
+    /* background-color: aliceblue; */
+    /* border-color: black;
+    border-style: solid; */
+    width: 4%;
+    height: 8%;
 }
 
 .Service-Slider #right{
     float:right;
-    background-color: aliceblue;
+    /* background-color: aliceblue;
     border-color: black;
-    border-style: solid;
+    border-style: solid; */
+    width: 4%;
+    height: 8%;
 }
 
 .Service-img{
@@ -311,4 +315,8 @@ footer{
     font-size: 140%;
     padding-bottom: 2.5%;
     font-variant: small-caps;
+}
+
+.button:hover{
+    cursor: pointer;
 }
