@@ -26,17 +26,18 @@
 }
 
 .login-button{
-    background-color: #4CAF50; /* Green */
+    color:black;
+    background-color:ivory; /* Green */
     border-style: solid;
-    color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    padding: 5px 5px;
     font-size: 16px;
     float: right;
-    border-radius: 10%;
+    border-radius: 50px;
     border-width: 2px;
+    margin-right: 15%;
     border-color: black;
 }
 
@@ -156,6 +157,7 @@ body{
     width:40%;
     height: 10%;
     padding-top: 5%;
+    padding-left: 5%;
     /* border: 2%;
     border-style: solid;
     border-color: green; */
@@ -299,4 +301,9 @@ footer{
 
 .button:hover{
     cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: greenyellow;
 }
