@@ -81,13 +81,13 @@ body{
     width: 100%;
     height:40%;
     background-color:lavenderblush;
-    margin: 2%;
+    margin-top: 2%;
     /* background-image: url("img/resort2.jpg");
     background-size: 100% 100%; */
 }
 
 .Welcome{
-    color:white;
+    color:black;
     display: flex;
     flex-direction:column ;
     align-items: left;
@@ -148,237 +148,103 @@ body{
     height: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-.About-Us{
-    width:100%;
-    /* background-color: aqua; */
-    /* overflow: hidden; */
-    display:flex;
-    align-items: center;
-    margin: 0 0px 10% 0px;
-    border-style:solid;
-    padding-top: 3%;
-    /* border-width: 20%; */
-    border-color: black;
-    border-top: 20%;
-    border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-    background-color: lavenderblush;
-    margin-bottom: 1%;
-
-    
-}
-
-
-p{
-    font-size: 120%;
-}
-.About-Us-Para{
-    width:50%;
-    display:inline-block;
-    text-align: center;
-    /* border:black;
-    border-radius:5px;
-    border-width: 5px;
-    border-style: double; */
-    margin: 0 auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 100%;
-    
-}
-.About-Us-Pic{
-    width: 20%;
-    /* display: inline-block; */
-    text-align: right;
-    /* border:black;
-    border-radius:5px;
-    border-width: 5px;
-    border-style: double; */
-    /* float:right; */
-    padding-right: 10%;
-    margin-right: 0%;
-    height:40%;
-
-}
-
-img{
-    border-radius: 25%;
-    width :100%;
-    height:100%;
-}
-
-#conatiner button{
-    margin:0%;
-}
-
-.NavButton:hover{
-    background-color: #4CAF50;
-    cursor:pointer;
-}
-
-.login-button:hover{
-    cursor: pointer;
-    background-color:olivedrab;
-}
-
-.body-text{
-    font-size: 120%;
-}
-
-.heading{
-    font-size: 150%;
-    font-variant: small-caps;
-    font-style: italic;
-}
-
-/* .Services{
-    border-top: 20%;
-    border-style: solid;
-    border-color: black;
-    border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-} */
-
-
-.Services{
-    /* border: 5px 0 0 0;
-    border-bottom: 0;
-    border-style: solid; */
-    width:100%;
-    height:60%;
+.Details-Outer{
     display: flex;
     align-items: center;
     flex-direction: row;
-    
-}
-
-.About-Services{
-    width:40%;
-    display:inline-block;
-    text-align: center;
-    /* border:black;
-    border-radius:5px;
-    border-width: 5px;
-    border-style: double; */
-    margin: 0 auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 100%;
-    
-}
-.Service-Slider{
-    display: flex;
-    align-items: center;
-    margin-left: 10%;
-    width: 55%;
-    /* display: inline-block; */
-    text-align: center;
-    /* border:black;
-    border-radius:5px;
-    border-width: 5px;
-    border-style: double; */
-    /* float:left; */
-    padding-right: 10%;
-    margin-right: 0%;
+    width: 100%;
     height:60%;
-
-}
-.Service-Slider #left{
-    float:left;
-    /* background-color: aliceblue; */
-    /* border-color: black;
-    border-style: solid; */
-    width: 4%;
-    height: 8%;
-}
-
-.Service-Slider #right{
-    float:right;
-    /* background-color: aliceblue;
-    border-color: black;
-    border-style: solid; */
-    width: 4%;
-    height: 8%;
-}
-
-.Service-img{
-    display: inline-block;
-    width:75%;
-    height: auto;
-    padding: 0 10% 0 10%;
-}
-
-.active{
-    display: inline-block;
-    width:75%;
-    height: auto;
-    padding: 0 10% 0 10%;
-
-}
-
-.inactive{
-    display:none;
-}
-
-button:hover{
-    cursor: pointer;
+    background-color:white;
+    margin-top: 2%;
+    /* background-image: url("img/resort2.jpg");
+    background-size: 100% 100%; */
 }
 
 
-.Reviews{
+.Details{
+    color:black;
     display: flex;
-    align-items: center;
+    flex-direction:column ;
+    align-items: left;
+    height:80%;
+    width:80%;
+    /* border: 2%;
+    border-style: solid;
+    border-color: black; */
+    margin-left: 10%;
+    margin-right: 5%;
 }
 
-.review-box{
-    display: flex;
-    align-items: center;
-    padding: 5%;
+.Details-Head{
+    width: 40%;
+    height: 25%;
+
 }
 
-.Slot{
-    border-color: black;
-    border-style: double;
-    border-radius: 5%;
-    border-width: 2px;
-    margin-right: 2%;
-    padding: 1%;
-}
-
-.UserName{
-    font-size: 120%;
-    text-align: center;
-}
-
-.stars{
-    font-size: 120%;
+.Details-Title{
+    font-size: 250%;
+    font-variant: small-caps;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+    font-family:Luminari, fantasy;
+    font-weight: 10;
 }
 
-.UserReview{
-    font-size: 100%;
-    font-style: oblique;
+.Details-Body{
+    width:70%;
+    height: 80%;
+    /* border: 2%;
+    border-style: solid;
+    border-color: black; */
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    
 }
 
-.ReviewPanel{
-    /* padding: 10%; */
-    background-color: lavenderblush;
-    margin-bottom: 2%;
+.Detail{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    padding-left:15%
+    /* border: 2%;
+    border-style: solid;
+    border-color: black; */
 }
+
+
+.Detail-Heading{
+    /* text-align: left; */
+    font-size: 140%;
+    font-variant:normal;
+    font-style:normal;
+    font-family:Comic Sans MS, Comic Sans, cursive;
+    font-weight: 100;
+    margin-right: 3%;
+
+
+    /* border: 2%;
+    border-style: solid;
+    border-color: black; */
+    /* margin-right:5%; */
+}
+
+.Detail-Info{
+    font-size: 140%;
+    font-variant:normal;
+    font-style:normal;
+    font-family:Comic Sans MS, Comic Sans, cursive;
+    font-weight: 10;
+    padding-right: 5%;
+    /* border: 2%;
+    border-style: solid;
+    border-color: black; */
+}
+
+
+
+
+
+
 
 footer{
     background-color:darksalmon;
