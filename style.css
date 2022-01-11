@@ -1,12 +1,28 @@
+.header2{
+    padding-bottom: 2%;
+    background-color: eee2e2;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
 .title{
     font-size: 24px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     display: inline-block;
-    width: 79%;
+    width: 30%;
     text-align: center;
-    padding-left: 10%;
     
+}
+
+.NavBar{
+    overflow: hidden;
+    background-color:#eee2e2;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 65%;
 }
 
 .login-button{
@@ -14,7 +30,6 @@
     border-style: solid;
     color: white;
     padding: 15px 32px;
-    margin-top:10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -29,11 +44,6 @@
     width: 10%;
 }
 
-.header2{
-    padding-bottom: 2%;
-    background-color: lavenderblush;
-    margin-top: 0;
-}
 
 body{
     background-color:white;
@@ -56,7 +66,7 @@ body{
     border-top: 0;
     border-bottom: 0;
     border-left:0; 
-    border-right: 100% ;
+    border-right: 0 ;
     /* border-radius:300px; */
     /* margin-left:2%; */
     text-align: center;
@@ -72,15 +82,9 @@ body{
     background-color: aquamarine;
 }
 
-.NavBar{
-    overflow: hidden;
-    background-color:#eee2e2;
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
 
 .NavSpace{
-    width:8%;
+    width:2%;
     background-color: eee2e2;
     border-style: hidden;
     /* border-style: solid;
@@ -91,16 +95,16 @@ body{
     border-right: 100% ; */
 }
 
-#current{
+/* #current{
     background-color: lavenderblush;
-}
+} */
 
 .Welcome-Outer{
     display: flex;
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height:40%;
+    height:30%;
     background-color:lavenderblush;
     /* margin-top: 2%; */
     /* background-image: url("img/resort2.jpg");
@@ -110,10 +114,10 @@ body{
 .Welcome{
     color:black;
     display: flex;
-    flex-direction:column ;
+    flex-direction:row ;
     align-items: left;
     height:80%;
-    width:50%;
+    width:100%;
     /* border: 2%;
     border-style: solid;
     border-color: black; */
@@ -123,9 +127,14 @@ body{
 }
 
 .Title-Box{
-    width:70%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width:30%;
     height:10%;
     padding-bottom: 4%;
+    padding-top: 5%;
+    padding-left: 5%;
     /* border: 2%;
     border-style: solid;
     border-color: green; */
@@ -133,7 +142,7 @@ body{
 }
 
 .welcome-title{
-    font-size: 220%;
+    font-size: 250%;
     font-variant: small-caps;
     font-style: italic;
     font-family:cursive;
@@ -144,15 +153,15 @@ body{
 .Body-Box{
     display:flex;
     align-items: center;
-    width:70%;
-    height:60%;
-    margin-left: 5%;
+    width:40%;
+    height: 10%;
+    padding-top: 5%;
     /* border: 2%;
     border-style: solid;
     border-color: green; */
 }
 .Welcome-Space{
-    width: 35%;
+    width: 10%;
     margin:1%;
 }
 

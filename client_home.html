@@ -8,16 +8,30 @@
 <script src="test.js"></script>
 
 <body>
-    <div style = "width: 100%; height:2%; background-color:eee2e2;">
-
-    </div>
     <!-- Title -->
     <div class="header2">
         <div class='title'>
-            <h2 style="margin:0%;">
+            <h2>
                 Greenville Resort
             </h2>
         </div>
+
+        <div class="NavBar">
+            <button class="NavSpace">
+            </button>
+            <button class="NavButton" id="current">
+                Home
+            </button>
+        
+            <button class="NavButton">
+                Book Services
+            </button>
+        
+            <button class="NavButton" onclick="location.href='https://wwww.google.com'">
+                Checkout
+            </button>
+        </div>
+
         <div class='login' style="display: inline-block;">
             <button class="login-button" id="login">
                 Log Out
@@ -26,36 +40,21 @@
     </div>
 
     <!-- Nav   -->
-    <div class="NavBar">
-        <button class = "NavSpace">
-        </button>
-        <button class="NavButton" id="current">
-            Home
-        </button>
-
-        <button class="NavButton">
-            Book Services
-        </button>
-
-        <button class="NavButton" onclick="location.href='https://wwww.google.com'">
-            Checkout
-        </button>
-    </div>
 
 
     <div class="Welcome-Outer">
         <div class="Welcome">
             <div class="Title-Box">
-                <div class="title welcome-title">
-                    Welcome Client Name
+                <div class="welcome-title">
+                    Welcome <br> <span class = "ClientName">Abdullah Gohar</span>
                 </div>
             </div>
             <div class="Body-Box">
-                <div class="Welcome-Space">
-                </div>
                 <div class="body-text welcome-body">
                     Hope you enjoy your stay at The Greenville Resort<br>
                     Feel free to explore the grounds, use one of our many services and have an adventerous time
+                </div>
+                <div class="Welcome-Space">
                 </div>
             </div>
         </div>
