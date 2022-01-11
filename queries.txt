@@ -14,7 +14,9 @@ create table Client(
 	UserName varchar(20),
 	PhoneNo varchar(15),
 	Gender varchar(20),
-	Email varchar(50)
+	Email varchar(50),
+    CheckInDate date,
+	CheckOutDate date,
 	Constraint UserID_FK Foreign Key (ClientID) references Users(UserID)
 )
 
@@ -45,9 +47,7 @@ create table Room(
 	RoomFloor int,
 	RoomPrice decimal(12,2),
 	RoomState int Default(0),
-	ClientID int Foreign Key references Client(ClientID),
-	CheckInDate date,
-	CheckOutDate date
+	ClientID int Foreign Key references Client(ClientID)
 )
 
 
