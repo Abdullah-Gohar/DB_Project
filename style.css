@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    height: 15%;
 }
 
 .title{
@@ -80,7 +81,9 @@ body{
 
 .NavButton:hover{
     cursor: pointer;
-    background-color: aquamarine;
+    font-size: 140%;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 
@@ -303,7 +306,8 @@ footer{
     cursor: pointer;
 }
 
-button:hover{
+.login-button:hover{
     cursor: pointer;
     background-color: greenyellow;
+    
 }
