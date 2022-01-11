@@ -1,0 +1,149 @@
+.title{
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    display: inline-block;
+    width: 89%;
+    text-align: center;
+}
+
+.login-button{
+    background-color: #4CAF50; /* Green */
+    border-style: solid;
+    color: white;
+    padding: 15px 32px;
+    margin-top:10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+    border-radius: 10%;
+    border-width: 2px;
+    border-color: black;
+}
+
+.login{
+    width: 10%;
+}
+
+.header2{
+    /* background-color: darkgray; */
+}
+
+body{
+    background-color:grey;
+    margin:0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+    /* background-image: url("resort2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;; */
+}
+
+.NavButton{
+    float:left;
+    width: 20%;
+    background-color:lavender;
+    border-color: black;
+    border-radius: 5px;
+    margin-left: 2%;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.NavBar{
+    overflow: hidden;
+    /* background-color:darkgrey; */
+    padding: 2%;
+}
+
+#current{
+    background-color: cadetblue;
+}
+
+.About-Us{
+    width:100%;
+    /* background-color: aqua; */
+    /* overflow: hidden; */
+    margin: 10px 0px 10% 0px;
+    border-style:solid;
+    /* border-width: 20%; */
+    border-color: black;
+    border-top: 20%;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+
+    
+}
+
+.About-Us-Para{
+    width:55%;
+    display:inline-block;
+    text-align: center;
+    /* border:black;
+    border-radius:5px;
+    border-width: 5px;
+    border-style: double; */
+    margin: 0 auto;
+    padding-left: 10%;
+    font-size: 150%;
+    
+}
+.About-Us-Pic{
+    width: 25%;
+    display: inline-block;
+    text-align: right;
+    /* border:black;
+    border-radius:5px;
+    border-width: 5px;
+    border-style: double; */
+    float:right;
+    padding-right: 50px;
+    margin-right: 0%;
+    height:40%;
+
+}
+
+img{
+    border-radius: 25%;
+    width :100%;
+    height:100%;
+}
+
+#conatiner button{
+    margin:0%;
+}
+
+.NavButton:hover{
+    background-color: #4CAF50;
+    cursor:pointer;
+}
+
+.login-button:hover{
+    cursor: pointer;
+    background-color:olivedrab;
+}
+
+.body-text{
+    font-size: 120%;
+}
+
+.heading{
+    font-size: 150%;
+    font-variant: small-caps;
+    font-style: italic;
+}
+
+/* .Services{
+    border-top: 20%;
+    border-style: solid;
+    border-color: black;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+} */

@@ -1,0 +1,122 @@
+
+
+create table Users(
+	UserID int Primary Key,
+	Pass varchar(50),
+	UserName varchar(20)
+
+)
+
+
+
+create table Client(
+	ClientID int Primary key,
+	UserName varchar(20),
+	PhoneNo varchar(15),
+	Gender varchar(20),
+	Email varchar(50),
+    CheckInDate date,
+	CheckOutDate date,
+	Constraint UserID_FK Foreign Key (ClientID) references Users(UserID)
+)
+
+
+create table Admin(
+	AdminID int Primary key,
+	Constraint UserID_FK_Admin Foreign Key (AdminID) references Users(UserID)
+)
+
+create table Bill(
+	BillNo int,
+	BillDate Date,
+	BillAmount decimal(12,2) Default(0.00),
+	ClientID int Foreign Key references Client(ClientID),
+	Constraint PK_Bill Primary Key(BillNo,ClientID)
+)
+
+create table Review(
+	ReviewNo int,
+	ReviewRating int check(ReviewRating>=0 and ReviewRating <= 5),
+	ReviewComments varchar(200),
+	ClientID int Foreign Key references Client(ClientID),
+	Constraint PK_Review Primary Key (ReviewNo,ClientID)
+)
+
+create table Room(
+	RoomNo int Primary Key,
+	RoomFloor int,
+	RoomPrice decimal(12,2),
+	RoomState int Default(0),
+	ClientID int Foreign Key references Client(ClientID)
+)
+
+
+create table Penthouse(
+	RoomNo int foreign key references room(RoomNo),
+	RoomPrice decimal(12,2) default(599.99),
+	RoomFloor int default(4)
+)
+
+create table Suite(
+	RoomNo int foreign key references room(RoomNo),
+	RoomPrice decimal(12,2) default(399.99),
+	RoomFloor int default(3)
+)
+
+create table Luxury(
+	RoomNo int foreign key references room(RoomNo),
+	RoomPrice decimal(12,2) default(299.99),
+	RoomFloor int default(1)
+)
+
+create table Economy(
+	RoomNo int foreign key references room(RoomNo),
+	RoomPrice decimal(12,2) default(99.99),
+	RoomFloor int default(2)
+)
+
+create table Service(
+	ServiceNo int Primary Key,
+	ServicePrice decimal(12,2),
+	ServiceName varchar(50)
+)
+
+create table Orders(
+	ClientID int Foreign Key references Client(ClientID),
+	ServiceNo int Foreign Key references Service(ServiceNo),
+	Constraint PK_Order Primary Key(ClientID,ServiceNo)
+)
+
+create table Food(
+	ItemNo int,
+	ItemName varchar(50),
+	ServiceNo int Foreign Key references Service(ServiceNo) default(1),
+	Primary Key(ServiceNo)
+)
+
+create table Tennis(
+	ServiceNo int Foreign Key references Service(ServiceNo) default(2),
+	Primary Key(ServiceNo),
+	ServicePrice decimal(12,2)default(59.99)
+)
+
+create table Bowling(
+	ServiceNo int Foreign Key references Service(ServiceNo) default(3),
+	Primary Key(ServiceNo),
+	ServicePrice decimal(12,2) default(39.99)
+)
+
+create table Movies(
+	ServiceNo int Foreign Key references Service(ServiceNo) default(4),
+	Primary Key(ServiceNo),
+	ServicePrice decimal(12,2) default(9.99)
+)
+
+
+
+
+
+
+
+
+
