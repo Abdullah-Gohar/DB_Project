@@ -170,39 +170,3 @@
     border-color: black; */
 }
 
-
-
-
-
-
-
-footer{
-    background-color:darksalmon;
-    padding: 3%;
-    display: flex;
-    align-items: left;
-}
-
-.info{
-    text-align: left;
-    font-size: 120%;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 700;
-}
-
-.contact{
-    font-size: 140%;
-    padding-bottom: 2.5%;
-    font-variant: small-caps;
-}
-
-.button:hover{
-    cursor: pointer;
-}
-
-.login-button:hover{
-    cursor: pointer;
-    background-color: greenyellow;
-    
-}
