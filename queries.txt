@@ -1,53 +1,54 @@
 
 
 create table Users(
-	UserID int Primary Key,
-	Pass varchar(50),
-	UserName varchar(20)
+	UserID int Primary Key constraint UserIDRequired not null,
+	Pass varchar(50)constraint PassRequired not null,
+	UserName varchar(20) constraint UserNameRequired not null
 
 )
 
 
 
 create table Client(
-	ClientID int Primary key,
-	UserName varchar(20),
-	PhoneNo varchar(15),
+	ClientID int Primary key constraint clientIdRequired not null,
+	ClientFirstName varchar(50) constraint ClientFirstNameRequired not null,
+	ClientLastName varchar(50) constraint ClientLastNameRequired not null,
+	PhoneNo varchar(15) constraint PhoneNoRequired not null,
 	Gender varchar(20),
-	Email varchar(50),
-    CheckInDate date,
-	CheckOutDate date,
+	Email varchar(50) constraint EmailRequired not null,
 	Constraint UserID_FK Foreign Key (ClientID) references Users(UserID)
 )
 
 
 create table Admin(
-	AdminID int Primary key,
+	AdminID int Primary key constraint AdminIDRequired not null,
 	Constraint UserID_FK_Admin Foreign Key (AdminID) references Users(UserID)
 )
 
 create table Bill(
-	BillNo int,
-	BillDate Date,
+	BillNo int constraint BillNoRequired not null,
+	BillDate Date constraint BillDateRequired not null,
 	BillAmount decimal(12,2) Default(0.00),
 	ClientID int Foreign Key references Client(ClientID),
 	Constraint PK_Bill Primary Key(BillNo,ClientID)
 )
 
 create table Review(
-	ReviewNo int,
-	ReviewRating int check(ReviewRating>=0 and ReviewRating <= 5),
-	ReviewComments varchar(200),
-	ClientID int Foreign Key references Client(ClientID),
+	ReviewNo int constraint ReviewNoRequired not null,
+	ReviewRating int check(ReviewRating>=0 and ReviewRating <= 5) constraint ReviewRatingRequired not null,
+	ReviewComments varchar(200) constraint ReviewCommentsRequired not null,
+	ClientID int Foreign Key references Client(ClientID) constraint ReviewClientIDRequired not null,
 	Constraint PK_Review Primary Key (ReviewNo,ClientID)
 )
 
 create table Room(
-	RoomNo int Primary Key,
-	RoomFloor int,
-	RoomPrice decimal(12,2),
+	RoomNo int Primary Key constraint RoomNoRequired not null,
+	RoomFloor int constraint ReviewFloorRequired not null,
+	RoomPrice decimal(12,2) constraint RoomPriceRequired not null,
 	RoomState int Default(0),
-	ClientID int Foreign Key references Client(ClientID)
+	ClientID int Foreign Key references Client(ClientID),
+	CheckInDate date,
+	CheckOutDate date
 )
 
 
@@ -76,9 +77,9 @@ create table Economy(
 )
 
 create table Service(
-	ServiceNo int Primary Key,
-	ServicePrice decimal(12,2),
-	ServiceName varchar(50)
+	ServiceNo int Primary Key constraint ServiceNoRequired not null,
+	ServicePrice decimal(12,2)constraint ServicePriceRequired not null,
+	ServiceName varchar(50)constraint ServiceNameRequired not null
 )
 
 create table Orders(
@@ -88,8 +89,8 @@ create table Orders(
 )
 
 create table Food(
-	ItemNo int,
-	ItemName varchar(50),
+	ItemNo int constraint ItemNoRequired not null,
+	ItemName varchar(50) constraint ItemNameRequired not null,
 	ServiceNo int Foreign Key references Service(ServiceNo) default(1),
 	Primary Key(ServiceNo)
 )
