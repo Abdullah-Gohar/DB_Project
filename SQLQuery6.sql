@@ -46,9 +46,14 @@ create table Room(
 	RoomFloor int,
 	RoomPrice decimal(12,2),
 	RoomState int Default(0),
+)
+
+create table Booking(
 	ClientID int Foreign Key references Client(ClientID),
+	RoomNo int Foreign Key references Room(RoomNo),
 	CheckInDate date,
-	CheckOutDate date
+	CheckOutDate date,
+	Primary Key(ClientID,RoomNo)
 )
 
 
@@ -115,7 +120,7 @@ create table Movies(
 )
 
 
-
+Select * from Booking
 
 
 

@@ -69,3 +69,4 @@ alter table Room
 drop column ClientID
 
 drop table Penthouse,Suite,Luxury,Economy
+drop table Room
