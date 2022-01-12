@@ -98,3 +98,24 @@ body{
     border-left:0; 
     border-right: 100% ; */
 }
+
+footer{
+    background-color:darksalmon;
+    padding: 3%;
+    display: flex;
+    align-items: left;
+}
+
+.info{
+    text-align: left;
+    font-size: 120%;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.contact{
+    font-size: 140%;
+    padding-bottom: 2.5%;
+    font-variant: small-caps;
+}
