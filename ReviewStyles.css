@@ -43,6 +43,28 @@
     margin-top: 1.2%;
 }
 
+.comments-title{
+    font-size: 200%;
+    font-variant:normal;
+    font-style:normal;
+    font-family:Comic Sans MS, Comic Sans, cursive;
+    font-weight: 100;
+    margin-right: 5%;
+    margin-top: 1.2%;
+}
+
+textarea {
+  width: 100%;
+  height: 50%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 20px;
+  resize: none;
+}
+
 .rate {
     float: left;
     height: 46px;
