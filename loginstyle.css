@@ -153,3 +153,18 @@ footer{
 .pass{
     padding-bottom: 15px;
 }
+
+.admin:hover{
+    cursor: pointer;
+    color:darksalmon ;
+    text-decoration: underline;
+}
+
+.client:hover{
+    cursor: pointer;
+    color: darksalmon;
+    text-decoration: underline;
+}
+input[type='radio'] {
+    -webkit-appearance:none;
+}
