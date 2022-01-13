@@ -40,22 +40,29 @@
     <!--Login   -->
 
 
-    <div>
+    <div class="loginDiv">
         <div>
             <h3>Login</h3>
         </div>
-        <div>
-            <input type="radio" id="admin" name="radio" value="Admin">
-            <label for="admin">Admin</label><br>
-            <input type="radio" id="client" name="radio" value="Client">
-            <label for="client">Client</label><br>
+        <div class="adminClient">
+            <div class="admin">
+                <input type="radio" id="admin" name="radio" value="Admin">
+                <label for="admin">Admin</label><br>
+            </div>
+            <div class="client">
+                <input type="radio" id="client" name="radio" value="Client">
+                <label for="client">Client</label><br>
+            </div>
         </div>
-        <div>
-            <input type="text" value="Username"/>
+        <div class="username">
+            <input type="text" value="Username" style="height:30px;width:250px"/>
         </div>
     
+        <div class="pass">
+            <input type="password" style="height:30px;width:250px"/>
+        </div>
         <div>
-            <input type="password"/>
+            <input type="button" value="Login" style="height:40px;width:250px"/>
         </div>
     </div>
 
