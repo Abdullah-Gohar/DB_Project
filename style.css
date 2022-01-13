@@ -22,7 +22,7 @@ padding:3px;
 }
 
 
-a,.name,.fancybox,.button,.dropdown-content a,.stats{
+a,.name,.fancybox,.button,.dropdown-content a,.stats,.logout,span{
 font-family: 'Be Vietnam Pro', sans-serif;
 text-decoration: none;
 color:cadetblue;
@@ -108,4 +108,27 @@ float:left;
 width:25%;
 margin:auto;
 
+}
+.logout{
+    float:right;
+}
+footer{
+    background-color:darksalmon;
+    padding: 3%;
+    display: flex;
+    align-items: left;
+}
+
+.info{
+    text-align: left;
+    font-size: 120%;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.contact{
+    font-size: 140%;
+    padding-bottom: 2.5%;
+    font-variant: small-caps;
 }
