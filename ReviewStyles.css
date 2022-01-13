@@ -1,0 +1,80 @@
+.ReviewIntro-Outer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height:20%;
+    background-color:lavenderblush;
+}
+
+.ReviewIntro{
+    font-size: 250%;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    margin-left: 30%;
+}
+
+.form-outer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    background-color: white;
+}
+.form{
+    height: 80%;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.rating-stars{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+}
+
+.rating-title{
+    font-size: 200%;
+    font-variant:normal;
+    font-style:normal;
+    font-family:Comic Sans MS, Comic Sans, cursive;
+    font-weight: 100;
+    margin-right: 5%;
+    margin-top: 1.2%;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:45px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
