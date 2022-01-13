@@ -1,0 +1,7 @@
+.mainDiv{
+    display: block;
+    width: 50%;
+    margin-left: 25%;
+    border: 5px solid pink;
+    border-radius: 10px;
+}
