@@ -22,11 +22,12 @@ padding:3px;
 }
 
 
-a,.name,.stats,.fancybox,.button,.dropdown-content a{
+a,.name,.fancybox,.button,.dropdown-content a,.stats{
 font-family: 'Be Vietnam Pro', sans-serif;
 text-decoration: none;
 color:cadetblue;
 }
+
 
 .name{
 text-shadow: 2px 2px 8px #4a898b
