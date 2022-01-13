@@ -174,3 +174,17 @@ footer{
 .loginDiv input[type="radio"]:checked + label {
     background-color: rgb(157, 243, 214);
 }
+.admin:hover{
+    cursor: pointer;
+    color:darksalmon ;
+    text-decoration: underline;
+}
+
+.client:hover{
+    cursor: pointer;
+    color: darksalmon;
+    text-decoration: underline;
+}
+input[type='radio'] {
+    -webkit-appearance:none;
+}
