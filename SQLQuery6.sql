@@ -1,5 +1,3 @@
-
-
 create table Users(
 	UserID int Primary Key constraint UserIDRequired not null,
 	Pass varchar(50)constraint PassRequired not null,
@@ -104,6 +102,7 @@ create table FoodReservation(
 
 
 Select * from Booking
+
 
 
 drop table Food,Tennis,Bowling,Movies
