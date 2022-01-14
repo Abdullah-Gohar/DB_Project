@@ -32,20 +32,23 @@ create table Bill(
 	Constraint PK_Bill Primary Key(BillNo,ClientID)
 )
 
-create table Review(
-	ReviewNo int constraint ReviewNoRequired not null,
-	ReviewRating int check(ReviewRating>=0 and ReviewRating <= 5) constraint ReviewRatingRequired not null,
-	ReviewComments varchar(200) constraint ReviewCommentsRequired not null,
-	ClientID int Foreign Key references Client(ClientID) constraint ReviewClientIDRequired not null,
-	Constraint PK_Review Primary Key (ReviewNo,ClientID)
-)
-
 create table Room(
 	RoomNo int Primary Key constraint RoomNoRequired not null,
 	RoomFloor int,
 	RoomPrice decimal(12,2),
 	RoomState int Default(0),
 )
+
+
+create table Review(
+	ReviewNo int constraint ReviewNoRequired not null,
+	ReviewRating int check(ReviewRating>=0 and ReviewRating <= 5) constraint ReviewRatingRequired not null,
+	ReviewComments varchar(200) constraint ReviewCommentsRequired not null,
+	ClientID int Foreign Key references Client(ClientID) constraint ReviewClientIDRequired not null,
+	RoomNo int Foreign Key references Room(RoomNo)
+	Constraint PK_Review Primary Key (ReviewNo,ClientID)
+)
+
 
 create table Booking(
 	ClientID int Foreign Key references Client(ClientID),

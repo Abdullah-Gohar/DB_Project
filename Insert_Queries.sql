@@ -100,3 +100,13 @@ Select * from Bill
 Select * from Review
 
 Select * from FoodReservation
+
+drop table review,bill,penthouse,suite,luxury,economy,foodreservation
+drop table orders
+drop table service
+drop table booking 
+drop table room
+
+drop table client
+drop table admin
+drop table users
