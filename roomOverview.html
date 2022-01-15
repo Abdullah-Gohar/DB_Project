@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Overview</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href = "styleEverything.css">
+   
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+        <li class="name"><a href ="adminHome.html"><Strong>Admin </Strong></li>
+        <li><a href="roomOverview.html"><strong>Room Overview</strong> </a></li>
+        <li><a href="clientHistory.html"><strong>Client History</strong></a></li>
+  
+        </div>
+    </ul>
+</nav>
+    <div class="stats" id = "roomOverview"> 
+        <h1>Room Overview </h1>
+    </div>
+ <ul class="btngroup">
+    <li>
+        <div class="dropdown">
+        <button onclick="toggleEco()" class="button"  >Economy</button>
+        <div id="dropdownEco" class="dropdown-content">
+          <a href="#" id = "room5" onclick="toggleroom(this.id)">Room 5</a>
+          <a href="#" id = "room6" onclick = "toggleroom(this.id)">Room 6</a>
+          <a href="#"  id = "room7" onclick = "toggleroom(this.id)">Room 7</a>
+          <a href="#"  id = "room8" onclick = "toggleroom(this.id)">Room 8</a>
+          <a href="#"  id = "room9" onclick = "toggleroom(this.id)">Room 9</a>
+          <a href="#"  id = "room10" onclick = "toggleroom(this.id)">Room 10</a>
+          <a href="#"  id = "room11" onclick = "toggleroom(this.id)">Room 11</a>
+          <a href="#"  id = "room12" onclick = "toggleroom(this.id)">Room 12</a> 
+          
+        </div>
+      </div>
+      </li>
+    <li>
+      <div class="dropdown">
+        <button onclick="toggleLux()" class="button" >Luxury</button>
+        <div id="dropdownLux" class="dropdown-content">
+          <a href="#"  id = "room1" onclick = "toggleroom(this.id)">Room 1</a>
+          <a href="#"  id = "room2" onclick = "toggleroom(this.id)">Room 2</a>
+          <a href="#"  id = "room3" onclick = "toggleroom(this.id)">Room 3</a>
+          <a href="#"  id = "room4" onclick = "toggleroom(this.id)">Room 4</a>
+        
+        </div>
+      </div>
+      </li>
+     <li>
+      <div class="dropdown">
+        <button onclick="toggleSuite()" class="button" >Suite</button>
+        <div id="dropdownSuite" class="dropdown-content">
+          <a href="#"  id = "room13" onclick = "toggleroom(this.id)" >Room 13</a>
+          <a href="#"  id = "room14" onclick = "toggleroom(this.id)">Room 14</a>
+          <a href="#" id = "room15" onclick = "toggleroom(this.id)">Room 15</a>
+          <a href="#" id = "room16" onclick = "toggleroom(this.id)">Room 16</a>  
+        </div>
+        </div>
+        </li>
+    <li>
+        <div class="dropdown">
+            <button onclick="togglePh()" class="button" >PentHouse</button>
+            <div id="dropdownPh" class="dropdown-content">
+              <a href="#" id = "room17" onclick = "toggleroom(this.id)">Room 17
+              </a>
+            </div>
+            </div>
+            </li>
+
+      <div>
+       
+ </ul>
+</body>
+</html>
