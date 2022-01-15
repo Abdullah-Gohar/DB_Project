@@ -17,11 +17,11 @@ room = 1
 review_no =100
 day = 1
 month = 1
-year = 2000
+year = 2020
 x = 6
 num = 7
 reviews = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,2,2,2,2,1,1,1]
-with open('data3.sql','w') as file:
+with open('data.sql','w') as file:
     while(year<2022):
         if(room>17):
             room = 1
