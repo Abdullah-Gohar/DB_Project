@@ -1,5 +1,3 @@
-Select * from Users
-
 Insert into Users
 values(001,'abc123','Abdullah'),
 (002,'abc123','Mishal'),
@@ -27,15 +25,6 @@ values (5),(6),(7),(8),(9),(10),(11),(12)
 
 Insert into Luxury(RoomNo)
 values (1),(2),(3),(4)
-
-
-Select * from Room
-
-Select * from Penthouse
-Select * from Suite
-Select * from Luxury
-Select * from Economy
-
 
 Insert into Service(ServiceNo,ServiceName)
 values (1,'Tennis'),(2,'Bowling'),(3,'Movies')
@@ -65,48 +54,5 @@ values(01,'17-Nov-2020',799.99,05)
 
 
 
-Select * from Tennis
-Select * from Bowling
-Select * from Movies
 
 
-Select * from Tennis
-
-alter table Room
-drop column ClientID
-
-drop table Penthouse,Suite,Luxury,Economy
-drop table Room
-
-
-drop table Food,Tennis,Bowling,Movies
-
-alter table Users
-add constraint unique_username Unique(UserName)
-
-
-Select * from Users
-
-Select * from Client
-
-Select * from Booking
-
-Select * from Room
-
-Select * from Orders
-
-Select * from Bill
-
-Select * from Review
-
-Select * from FoodReservation
-
-drop table review,bill,penthouse,suite,luxury,economy,foodreservation
-drop table orders
-drop table service
-drop table booking 
-drop table room
-
-drop table client
-drop table admin
-drop table users
