@@ -8,13 +8,13 @@ function submit(){
             password: document.getElementById("password").value
         },
         function (data, status) {
-            console.log(data + "   " + status)
-            window.alert(data + "   "+ status)
-            if (status!=200) {
-                window.location.href = "Landing.html"
+            // console.log(data.state + "   " + status)
+            // window.alert(data.state + "   "+ status)
+            if (data.state) {
+                window.location.href = "../Client/client_home.html"
             }
             else {
-                window.alert("Invalid Data")
+                // window.alert("Invalid Data")
                 document.getElementById("invalid-text").style.display = "block";
             }
         });

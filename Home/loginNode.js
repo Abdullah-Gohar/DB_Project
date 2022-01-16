@@ -8,6 +8,7 @@ const config = {
 }
 
 
+
 async function checkUser(name, pass) {
     const sql = require('mssql')
     const { boolean } = require('webidl-conversions')
@@ -39,19 +40,15 @@ async function checkUser(name, pass) {
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+var cors = require('cors')
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors())
 app.post('/checkUser', (req, res) => {
     (async () => {
         let flag = await checkUser(req.body.username, req.body.password)
         console.log(req.body)
-        if(flag){
-            res.sendStatus(200)
-        }
-        else{
-            res.sendStatus(404)
-        }
+        res.send({state:flag})
         // if (flag) {
         //     window.location.href = "Landing.html"
         // }
