@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="allStyle.css">
 <link rel="stylesheet" href="loginStyle.css">
 <script src="test.js"></script>
+<script src="login.js"></script>
+<!-- <script src = "require.js"></script> -->
 
 <body class="font">
     <!-- Title -->
@@ -42,29 +44,34 @@
 
 
     <div class="loginDiv">
-        <div>
-            <h3>Login</h3>
-        </div>
-        <div class="adminClient">
-            <div class="admin">
-                <input type="radio" id="admin" name="radio" value="Admin" checked = "true">
-                <label for="admin">Admin</label><br>
+        <form action = "http://localhost:8080/checkUser" method="POST">
+            <div>
+                <h3>Login</h3>
             </div>
-            <div class="client">
-                <input type="radio" id="client" name="radio" value="Client">
-                <label for="client">Client</label><br>
+            <div class="adminClient">
+                <div class="admin">
+                    <input type="radio" id="admin" name="radio" value="Admin" checked = "true">
+                    <label for="admin">Admin</label><br>
+                </div>
+                <div class="client">
+                    <input type="radio" id="client" name="radio" value="Client">
+                    <label for="client">Client</label><br>
+                </div>
             </div>
-        </div>
-        <div class="username">
-            <input type="text" placeholder="Username" style="height:30px;width:250px"/>
-        </div>
-    
-        <div class="pass">
-            <input type="password" placeholder="Password" style="height:30px;width:250px"/>
-        </div>
-        <div>
-            <input type="button" value="Login" style="height:40px;width:250px"/>
-        </div>
+            <div class="username">
+                <input type="text" name = "username" id="username" placeholder="Username" style="height:30px;width:250px"/>
+            </div>
+        
+            <div class="pass">
+                <input type="password" name = "password" id = "password" placeholder="Password" style="height:30px;width:250px"/>
+            </div>
+            <div id = "invalid-text">
+                Please enter valid username and password
+            </div>
+            <div>
+                <input type="submit"  value="Login" style="height:40px;width:250px"/>
+            </div>
+        </form>
     </div>
 
    
