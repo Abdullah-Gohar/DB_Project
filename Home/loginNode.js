@@ -26,7 +26,6 @@ async function checkUser(name, pass) {
         if (result.recordsets[0].length != 0) {
             var flag = true
         }
-        console.log(result.recordsets[0].length)
         sql.close()
         return flag
     } catch (err) {

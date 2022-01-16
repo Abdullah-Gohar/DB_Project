@@ -201,3 +201,12 @@ footer{
 .font{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.admin,.client{
+    padding-right: 15%;
+}
+
+.choice:hover{
+    cursor: pointer;
+}
