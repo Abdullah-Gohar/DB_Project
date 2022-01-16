@@ -45,14 +45,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/checkUser', (req, res) => {
     (async () => {
         let flag = await checkUser(req.body.username, req.body.password)
-        console.log(req.body.username+" : "+ req.body.password + " = " + flag)
-        if (flag) {
-            window.location.href = "Landing.html"
+        console.log(req.body)
+        if(flag){
+            res.sendStatus(200)
         }
-        else {
-            window.alert("Invalid Data")
-            document.getElementById("invalid-text").style.display = "block";
+        else{
+            res.sendStatus(404)
         }
+        // if (flag) {
+        //     window.location.href = "Landing.html"
+        // }
+        // else {
+        //     window.alert("Invalid Data")
+        //     document.getElementById("invalid-text").style.display = "block";
+        // }
     })()
 });
 
