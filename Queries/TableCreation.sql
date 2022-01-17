@@ -14,7 +14,8 @@ create table Client(
 	PhoneNo varchar(15) constraint PhoneNoRequired not null,
 	Gender varchar(20),
 	Email varchar(50) constraint EmailRequired not null,
-	Constraint UserID_FK Foreign Key (ClientID) references Users(UserID)
+	Constraint UserID_FK Foreign Key (ClientID) references Users(UserID),
+	ClientStatus int Constraint ClientStatusRequired not null default(0)
 )
 
 
@@ -44,7 +45,6 @@ create table Review(
 	ReviewRating int check(ReviewRating>=0 and ReviewRating <= 5) constraint ReviewRatingRequired not null,
 	ReviewComments varchar(200) constraint ReviewCommentsRequired not null,
 	ClientID int Foreign Key references Client(ClientID) constraint ReviewClientIDRequired not null,
-	RoomNo int Foreign Key references Room(RoomNo)
 	Constraint PK_Review Primary Key (ReviewNo,ClientID)
 )
 
@@ -110,6 +110,3 @@ drop table room
 drop table client
 drop table admin
 drop table users
-
-
-

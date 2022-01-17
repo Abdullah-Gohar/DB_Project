@@ -35,7 +35,7 @@ Insert into Users
 values(05,'password','Abdullah05')
 
 Insert into Client
-values(05,'Abdullah','Gohar','03354133376','Male','abdsfnsd@gmail.com')
+values(05,'Abdullah','Gohar','03354133376','Male','abdsfnsd@gmail.com',Default)
 
 Insert into Booking
 values(05,17,'10-Nov-2020','17-Nov-2020')
@@ -51,10 +51,6 @@ values(01,5,'Good Resort',05)
 
 Insert into Bill
 values(01,'17-Nov-2020',799.99,05)
-
-
-
-
 
 
 
