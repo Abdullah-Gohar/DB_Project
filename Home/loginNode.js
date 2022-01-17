@@ -25,7 +25,7 @@ async function checkUser(name, pass, radio) {
         if(radio=='true'){
             console.log("client")
             result = await pool.request().query('Select UserName,Pass from Users inner join Client on Users.UserID = Client.ClientID' +
-                " where UserName = '" + name + "' and Pass = '" + pass + "'")
+                " where UserName = '" + name + "' and Pass = '" + pass + "' and ClientStatus = 1")
         }
         else{
             console.log("admin")
