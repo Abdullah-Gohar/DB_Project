@@ -9,7 +9,7 @@ const config = {
 
 
 
-async function checkUser(name, pass) {
+async function checkUser(name, pass, radio) {
     const sql = require('mssql')
     const { boolean } = require('webidl-conversions')
 
@@ -19,10 +19,21 @@ async function checkUser(name, pass) {
     })
 
     try {
+        console.log("checkUser: "+name+" : "+pass+" : "+radio)
         let pool = await sql.connect(config)
-        let result = await pool.request().query('Select UserName,Pass from Users inner join Client on Users.UserID = Client.ClientID' +
-            " where UserName = '" + name + "' and Pass = '" + pass + "'")
+        let result
+        if(radio=='true'){
+            console.log("client")
+            result = await pool.request().query('Select UserName,Pass from Users inner join Client on Users.UserID = Client.ClientID' +
+                " where UserName = '" + name + "' and Pass = '" + pass + "'")
+        }
+        else{
+            console.log("admin")
+            result = await pool.request().query('Select UserName,Pass from Users inner join Admin on Users.UserID = Admin.AdminID' +
+                " where UserName = '" + name + "' and Pass = '" + pass + "'")
+        }
         var flag = false
+        console.log(result.recordsets[0][0].UserName)
         if (result.recordsets[0].length != 0) {
             var flag = true
         }
@@ -45,16 +56,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.post('/checkUser', (req, res) => {
     (async () => {
-        let flag = await checkUser(req.body.username, req.body.password)
+        let flag = await checkUser(req.body.username, req.body.password,req.body.radio)
         console.log(req.body)
         res.send({state:flag})
-        // if (flag) {
-        //     window.location.href = "Landing.html"
-        // }
-        // else {
-        //     window.alert("Invalid Data")
-        //     document.getElementById("invalid-text").style.display = "block";
-        // }
     })()
 });
 
