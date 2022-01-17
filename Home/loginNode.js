@@ -57,7 +57,6 @@ app.use(cors())
 app.post('/checkUser', (req, res) => {
     (async () => {
         let flag = await checkUser(req.body.username, req.body.password,req.body.radio)
-        console.log(req.body)
         res.send({state:flag})
     })()
 });

@@ -43,7 +43,7 @@ with open('Queries/Insert_Small.sql','w') as file:
         order = [1,2,3]
         orders = [f'({x},'+str(order.pop(random.randint(0,len(order)-1)))+')' for _ in range(random.randint(1,3))]
         query1 = f"Insert into Users \nvalues({x},'password','{first+str(x)}')"
-        query2 = f"Insert into Client \nvalues({x},'{first}','{last}','{phone}','{random.choice(gender)}','{email}')"
+        query2 = f"Insert into Client \nvalues({x},'{first}','{last}','{phone}','{random.choice(gender)}','{email}',Default)"
         query3 = f"Insert into Booking \nvalues({x},{room},'{date1}','{date2}')"
         query4 = f"Insert into Orders \nvalues{','.join(orders)}"
         
