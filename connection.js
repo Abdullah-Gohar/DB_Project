@@ -23,19 +23,20 @@ async function setResHtml(sql, cb) {
     let result = await pool.request().query('Select * from Client  ')
 
     let table = ''; //to store html table
-
+    table = '<table border="1"><tr><th>Nr.</th><th>ID</th><th>FirstName</th><th>LastName</th><th>PhoneNo</th><th>Gender</th>+<th>Email</th></tr></table>';
     //create html table with data from res.
+    console.log(result.recordset[0].ClientID)
     for (var i = 0; i < result.recordsets.length; i++) {
-      table +='<tr><td>'+ (i+1) +'</td><td>'+ result.recordsets[i].ClientID +'</td><td>'+ result.recordsets[i].ClientFirstName +'</td><td>'+ result.recordsets[i].ClientLastName +'</td><td>'+ result.recordsets[i].PhoneNo +'</td><td>'+ result.recordsets[i].Gender +'</td><td>'+ result.recordsets[i].Email +'</td></tr>';
+      // console.log(result.recordsets)
+      table +='<tr><td>'+ (i+1) +'</td><td>'+ result.recordset[i].ClientID +'</td><td>'+ result.recordset[i].ClientFirstName +'</td><td>'+ result.recordset[i].ClientLastName +'</td><td>'+ result.recordset[i].PhoneNo +'</td><td>'+ result.recordset[i].Gender +'</td><td>'+ result.recordset[i].Email +'</td></tr>';
 
     }
-    table = '<table border="1"><tr><th>Nr.</th><th>ID</th><th>FirstName</th><th>LastName</th><th>PhoneNo</th><th>Gender</th>+<th>Email</th></tr></table>';
-
+    // console.log(table)
     sql.close()
        return cb(table);
 
   } catch (err) {
-    console.log(err.message)
+    console.log("Error: "+err.message)
     sql.close()
   }
 }

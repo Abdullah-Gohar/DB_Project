@@ -1,0 +1,13 @@
+.mainDiv{
+    text-align: center;
+    display: block;
+    width: 20%;
+    margin: 5%;
+    margin-left: 35%;
+    padding: 3%;
+    border: 5px solid pink;
+    border-radius: 10px;
+    }
+.title{
+    text-align: center;
+}
