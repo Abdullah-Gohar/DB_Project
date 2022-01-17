@@ -6,3 +6,5 @@ inner join Booking as B
 on B.ClientID = R.ClientID
 Group by B.RoomNo
 order by B.RoomNo
+
+

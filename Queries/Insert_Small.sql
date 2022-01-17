@@ -53569,3 +53569,6 @@ values(2650,5,'Speechless',2556)
 Insert into Bill 
 values (2650,'4-Jan-2022',6800.21,2556)
 
+
+
+
