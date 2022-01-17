@@ -1,7 +1,7 @@
 import random
 import decimal
 
-with open("names.txt",'r') as file:
+with open("Query Gen/names.txt",'r') as file:
     names = file.read()
     names = names.split()
    
@@ -21,7 +21,7 @@ year = 2020
 x = 6
 num = 7
 reviews = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,2,2,2,2,1,1,1]
-with open('data.sql','w') as file:
+with open('Queries/Insert_Small.sql','w') as file:
     while(year<2022):
         if(room>17):
             room = 1
@@ -48,7 +48,7 @@ with open('data.sql','w') as file:
         query4 = f"Insert into Orders \nvalues{','.join(orders)}"
         
         query5 = f"Insert into FoodReservation \nvalues({x},Default,{random.randint(1,20)})"
-        query6 = f"Insert into Review \nvalues({review_no},{random.choice(reviews)},'Speechless',{x},{room})"
+        query6 = f"Insert into Review \nvalues({review_no},{random.choice(reviews)},'Speechless',{x})"
         query7 = f"Insert into Bill \nvalues ({review_no},'{date2}',{decimal.Decimal(random.randrange(25500, 999999))/100},{x})"
         room+=1
         review_no+=1
