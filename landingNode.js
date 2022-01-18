@@ -9,7 +9,7 @@ const config = {
 
 
 
-async function checkReviews(UserName,stars,UserReviews) {
+async function getReviews() {
     const sql = require('mssql')
     const { boolean } = require('webidl-conversions')
 
@@ -24,7 +24,7 @@ async function checkReviews(UserName,stars,UserReviews) {
         let result
         
             console.log("review")
-            result = await pool.request().query('Select u.UserName, r.ReviewRating, r.ReviewComments from Users as u inner join Client as c on u.UserID = c.ClientID inner join Review as r on c.ClientId=r.ClientId' +
+            result = await pool.request().query('Select c.clie, r.ReviewRating, r.ReviewComments from Users as u inner join Client as c on u.UserID = c.ClientID inner join Review as r on c.ClientId=r.ClientId' +
                 " where r.ReviewNo = 100")
         
         
