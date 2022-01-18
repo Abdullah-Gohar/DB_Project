@@ -7,17 +7,10 @@ function review(){
         function (data, status) {
             // console.log(data.state + "   " + status)
             // window.alert(data.state + "   "+ status)
-            if (data.state) {
-                if (document.getElementById("client").checked){
-                    window.location.href = "../Client/client_home.html"
-                }
-                else{
-                    window.location.href = "../Admin/adminHome.html"
-                }
-            }
-            else {
-                // window.alert("Invalid Data")
-                document.getElementById("invalid-text").style.display = "block";
+            for(var i = 0;i<4;i++){
+                document.getElementById("Slot "+(i+1)).getElementsByClassName("UserName")[0].innerHTML = data[i].fname + " "+data[i].lname
+                document.getElementById("Slot " + (i + 1)).getElementsByClassName("stars")[0].innerHTML = data[i].rating+" Stars"
+                // document.getElementById("Slot " + (i + 1)).getElementsByClassName("UserReview")[0].innerHTML = data[i].comments
             }
         });
     
