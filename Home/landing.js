@@ -10,7 +10,7 @@ function review(){
             for(var i = 0;i<4;i++){
                 document.getElementById("Slot "+(i+1)).getElementsByClassName("UserName")[0].innerHTML = data[i].fname + " "+data[i].lname
                 document.getElementById("Slot " + (i + 1)).getElementsByClassName("stars")[0].innerHTML = data[i].rating+" Stars"
-                // document.getElementById("Slot " + (i + 1)).getElementsByClassName("UserReview")[0].innerHTML = data[i].comments
+                document.getElementById("Slot " + (i + 1)).getElementsByClassName("UserReview")[0].innerHTML = data[i].comments
             }
         });
     

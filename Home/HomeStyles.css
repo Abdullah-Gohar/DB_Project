@@ -146,12 +146,16 @@ list-style: none;
 }
 
 .Slot{
+    display: inline-block;
     border-color: black;
     border-style: double;
     border-radius: 5%;
     border-width: 2px;
-    margin-right: 2%;
+    margin-right: 6%;
     padding: 1%;
+    width:40%;
+    min-width: 40%;
+    text-align: center;
 }
 
 .UserName{
