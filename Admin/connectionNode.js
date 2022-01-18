@@ -134,11 +134,12 @@ app.get('/getUsers', (req, res) => {
         let result = await getUsers()
         console.log(result + " 5543")
         let table = ''; //to store html table
-        table = '<table border="1"><tr><th>Nr.</th><th>ID</th><th>FirstName</th><th>LastName</th><th>PhoneNo</th><th>Gender</th>+<th>Email</th></tr></table>';
+        table = '<table class="table-decoration" border="1"><tr><th class="tableheader">Nr.</th><th class="tableheader">ID</th><th class="tableheader">FirstName</th><th class="tableheader">LastName</th><th class="tableheader">PhoneNo</th><th class="tableheader">Gender</th>+<th class="tableheader">Email</th></tr></table>';
+
         //create html table with data from res.
         for (var i = 0; i < result.recordsets[0].length; i++) {
           // console.log(result.recordsets)
-          table +='<tr><td>'+ (i+1) +'</td><td>'+ result.recordset[i].ClientID +'</td><td>'+ result.recordset[i].ClientFirstName +'</td><td>'+ result.recordset[i].ClientLastName +'</td><td>'+ result.recordset[i].PhoneNo +'</td><td>'+ result.recordset[i].Gender +'</td><td>'+ result.recordset[i].Email +'<br></td></tr>';
+          table +='<tr class="tablerows"><td class="tablecell">'+ (i+1) +'</td><td class="tablecell">'+ result.recordset[i].ClientID +'</td><td class="tablecell">'+ result.recordset[i].ClientFirstName +'</td><td class="tablecell">'+ result.recordset[i].ClientLastName +'</td><td class="tablecell">'+ result.recordset[i].PhoneNo +'</td><td class="tablecell">'+ result.recordset[i].Gender +'</td><td class="tablecell">'+ result.recordset[i].Email +'</td><br></tr>';
 
         }
 

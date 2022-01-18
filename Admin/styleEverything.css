@@ -22,7 +22,7 @@ padding:3px;
 }
 
 
-a,.name,.fancybox,.button,.dropdown-content a,.stats,.logout,span{
+a,.name,.fancybox,.button,.dropdown-content a,.stats,.logout,span,.tableheader{
 font-family: 'Be Vietnam Pro', sans-serif;
 text-decoration: none;
 color:cadetblue;
@@ -132,3 +132,22 @@ footer{
     padding-bottom: 2.5%;
     font-variant: small-caps;
 }
+.table-decoration{
+    width:100%;
+}
+.tableheader{
+    width:220px;
+    text-align:center;
+    background-color:rgb(238, 226, 226)
+}
+
+.button{
+    display:grid;
+    margin:auto;
+    margin-bottom: 20px;
+}
+.tablerows{
+    border-right: 1px solid black;
+}
+
+  

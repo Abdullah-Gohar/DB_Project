@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href = "styleEverything.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="connectionStats.js"></script>
+
    
 </head>
 <body>
@@ -22,9 +25,11 @@
         </nav>
         <div class="stats" > 
             <h1>Statistics </h1>
-        </div>                               
-      <div class="fancybox" id = "freeRooms">
-          Number of Free Rooms : 6
+        </div>             
+        <!-- <div ><button class="button" onclick = "getData()">Update</button></div>                   -->
+      <div class="fancybox" >
+          Number of Free Rooms :
+          <span id = "freeRooms"> 18</span>
       </div>
     <div class="fancybox">
         Number of Booked Rooms : 
@@ -36,15 +41,15 @@
     </div>
     <div class="fancybox">
         Average Rating this month :
-        <span id = "avgRating"> 4.1</span>
+        <span id = "avgRatingmonth"> 4.1</span>
     </div>
     <div class="fancybox">
         No of bookings this month :
         <span id = "noOfCustomers"> 62</span>
     </div>
     <div class="fancybox">
-         Some random Stat :
-        <span id = "avgRating"> 64</span>
+         No of Services Ordered this Month :
+        <span id = "services"> 64</span>
     </div>  
     <footer>
         <div class="LeftFooter">
