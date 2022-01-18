@@ -19,26 +19,26 @@
         </div>
 
                 <div class="NavBar">
-                    <button class="NavSpace">
-                    </button>
-                    <button class="NavButton" id="current">
-                        Home
-                    </button>
-                
-                    <button class="NavButton" onclick='window.location.href="BookService.html";'>
-                        Book Services
-                    </button>
-                
-                    <button class="NavButton" onclick='window.location.href="https://w3docs.com";'>
-                        Checkout
-                    </button>
-                </div>
-                
-                <div class='login' style="display: inline-block;">
-                    <button class="login-button" id="login">
-                        Log Out
-                    </button>
-                </div>
+            <button class="NavSpace">
+            </button>
+            <button class="NavButton" id="current">
+                Home
+            </button>
+        
+            <button class="NavButton" onclick='window.location.href="BookService.html";'>
+                Book Services
+            </button>
+        
+            <button class="NavButton" onclick='window.location.href="https://w3docs.com";'>
+                Checkout
+            </button>
+        </div>
+
+        <div class='login' style="display: inline-block;">
+            <button class="login-button" onclick = "submit()" id="login">
+                Log Out
+            </button>
+        </div>
 
 
     </div>
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="Label">
-                <form action="/action_page.php">
+                <form>
                     <div>
                         <label for="CheckIn">Check-in:</label>
                     </div>
@@ -116,30 +116,37 @@
                     <div class="TextBox">
                         <input type="date" id="CheckOut" name="BookCheckOutTo">
                     </div>
+
+                    <div class = "ErrorDate" id = "InvalidCheckInDate" style = "display:none">
+                        Invalid Check In Date
+                    </div>
+                    <div class="ErrorDate" id="InvalidCheckOutDate" style="display:none">
+                        Invalid Check Out Date
+                    </div>
                 </form>
             </div>
             <div class="Label">
                 Room Type
                 <div class="TextBox">
-                    <input type="radio" id="penthouse" name="roomType" value="Penthouse">
+                    <input type="radio" id="penthouse" onchange="roomType(4)" name="roomType" value="4">
                 </div>
                 <div>
                     <label for="penthouse">Penthouse</label><br>
                 </div>
                 <div class="TextBox">
-                    <input type="radio" id="suite" name="roomType" value="Suite">
+                    <input type="radio" id="suite" onchange="roomType(3)" name="roomType" value="3">
                 </div>
                 <div >
                     <label for="suite">Suite</label><br>
                 </div>
                 <div class="TextBox">
-                    <input type="radio" id="luxury" name="roomType" value="Luxury">
+                    <input type="radio" id="luxury" onchange="roomType(1)" name="roomType" value="1">
                 </div>
                 <div>
                     <label for="luxury">Luxury</label><br>
                 </div>
                 <div class="TextBox">
-                    <input type="radio" id="economy" name="roomType" value="economy">
+                    <input type="radio" id="economy" onchange="roomType(2)" name="roomType" value="2">
                 </div>
                 <div>
                     <label for="economy">Economy</label><br>
@@ -149,17 +156,30 @@
                 <div>
                     <label for="RoomQty">Room Quantity</label><br>
                 </div>
-                <div class="TextBox">
+                <div class="TextBox" id = "RoomQuantity">
                     <select name="RoomQty" id="RoomQty">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="1" id ="Option 1">1</option>
+                        <option value="2" id ="Option 2">2</option>
+                        <option value="3" id ="Option 3">3</option>
+                        <option value="4" id ="Option 4">4</option>
+                        <option value="5" id ="Option 5">5</option>
+                        <option value="6" id ="Option 6">6</option>
+                        <option value="7" id ="Option 7">7</option>
+                        <option value="8" id ="Option 8">8</option>
                     </select>
+                </div>
+                <div id = "RoomUnavailable" class = "ErrorDate">
+                    Rooms of this type are not currently available
                 </div>
             </div>
             <div class="Button">
-                <input type="button" onclick="submit()" value="Confirm" style="height: 30px; width: 100px; background-color: salmon;">
+                <input type="button" id ="button" onclick="submit()" value="Confirm" style="height: 30px; width: 100px; background-color: salmon;">
+            </div>
+            <div id = "InvalidErrorText" class = "Error" style="display: none;">
+                Please enter valid input in all fields
+            </div>
+            <div id="IncompleteErrorText" class = "Error" style="display: none;">
+                Please enter data in all fields
             </div>
         </form>
     
