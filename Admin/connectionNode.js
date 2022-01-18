@@ -134,18 +134,24 @@ app.get('/getUsers', (req, res) => {
         let result = await getUsers()
         console.log(result + " 5543")
         let table = ''; //to store html table
-        table = '<table class="table-decoration" border="1"><tr><th class="tableheader">Nr.</th><th class="tableheader">ID</th><th class="tableheader">FirstName</th><th class="tableheader">LastName</th><th class="tableheader">PhoneNo</th><th class="tableheader">Gender</th>+<th class="tableheader">Email</th></tr></table>';
+        table = '<table id="table-decoration"><tr class = "tablerows"><th class="tableheader">#</th><th class="tableheader">ID</th><th class="tableheader">FirstName</th><th class="tableheader">LastName</th><th class="tableheader">PhoneNo</th><th class="tableheader">Gender</th>+<th class="tableheader">Email</th></tr>';
 
         //create html table with data from res.
-        for (var i = 0; i < result.recordsets[0].length; i++) {
+        for (var i = 0; i < result.recordset.length; i++) {
           // console.log(result.recordsets)
-          table +='<tr class="tablerows"><td class="tablecell">'+ (i+1) +'</td><td class="tablecell">'+ result.recordset[i].ClientID +'</td><td class="tablecell">'+ result.recordset[i].ClientFirstName +'</td><td class="tablecell">'+ result.recordset[i].ClientLastName +'</td><td class="tablecell">'+ result.recordset[i].PhoneNo +'</td><td class="tablecell">'+ result.recordset[i].Gender +'</td><td class="tablecell">'+ result.recordset[i].Email +'</td><br></tr>';
+          table +='<tr  class="tablerows"><td class="tablecell">'+ (i+1) +'</td><td class="tablecell">'+ result.recordset[i].ClientID +'</td><td class="tablecell">'+ result.recordset[i].ClientFirstName +'</td><td class="tablecell">'+ result.recordset[i].ClientLastName +'</td><td class="tablecell">'+ result.recordset[i].PhoneNo +'</td><td class="tablecell">'+ result.recordset[i].Gender +'</td><td class="tablecell">'+ result.recordset[i].Email +'</td></tr>';
 
         }
+
+        table+="</table>"
+
 
           res.send(table)
       })()
 });
+
+ 
+
 
 const port = 8080;
 
@@ -157,3 +163,4 @@ app.listen(port, () => {
 
 
 
+//id = "'+result.recordset[i].ClientID+'"
