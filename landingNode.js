@@ -9,7 +9,7 @@ const config = {
 
 
 
-async function checkUser(name, pass, radio) {
+async function getReviews() {
     const sql = require('mssql')
     const { boolean } = require('webidl-conversions')
 
@@ -19,19 +19,15 @@ async function checkUser(name, pass, radio) {
     })
 
     try {
-        console.log("checkUser: "+name+" : "+pass+" : "+radio)
+        console.log("checkReviews: "+UserName+" : "+stars+" : "+UserReviews)
         let pool = await sql.connect(config)
         let result
-        if(radio=='true'){
-            console.log("client")
-            result = await pool.request().query('Select UserName,Pass from Users inner join Client on Users.UserID = Client.ClientID' +
-                " where UserName = '" + name + "' and Pass = '" + pass + "' and ClientStatus = 1")
-        }
-        else{
-            console.log("admin")
-            result = await pool.request().query('Select UserName,Pass from Users inner join Admin on Users.UserID = Admin.AdminID' +
-                " where UserName = '" + name + "' and Pass = '" + pass + "'")
-        }
+        
+            console.log("review")
+            result = await pool.request().query('Select c.clie, r.ReviewRating, r.ReviewComments from Users as u inner join Client as c on u.UserID = c.ClientID inner join Review as r on c.ClientId=r.ClientId' +
+                " where r.ReviewNo = 100")
+        
+        
         var flag = false
         console.log(result.recordsets[0][0].UserName)
         if (result.recordsets[0].length != 0) {
@@ -54,9 +50,9 @@ var cors = require('cors')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
-app.post('/checkUser', (req, res) => {
+app.post('/checkReviews', (req, res) => {
     (async () => {
-        let flag = await checkUser(req.body.username, req.body.password,req.body.radio)
+        let flag = await checkReviews(req.body.Slot1.UserName, req.body.Slot1.stars,req.body.Slot1.UserReviews)
         res.send({state:flag})
     })()
 });
