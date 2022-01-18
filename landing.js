@@ -1,11 +1,8 @@
+window.onload = review()
 
-
-function submit(){
-    $.post("http://localhost:8080/checkReviews",
+function review(){
+    $.get("http://localhost:8080/getReviews",
         {
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-            radio: document.getElementById("client").checked
         },
         function (data, status) {
             // console.log(data.state + "   " + status)

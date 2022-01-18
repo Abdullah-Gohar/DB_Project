@@ -24,17 +24,17 @@ async function getReviews() {
         let result
         
             console.log("review")
-            result = await pool.request().query('Select c.clie, r.ReviewRating, r.ReviewComments from Users as u inner join Client as c on u.UserID = c.ClientID inner join Review as r on c.ClientId=r.ClientId' +
-                " where r.ReviewNo = 100")
+        result = await pool.request().query('Select C.ClientFirstName,C.ClientLastName,R.ReviewRating,R.ReviewComments from Client as C'
+        +"inner join Review as R"
+        +"on R.ClientID = C.ClientID")
         
         
-        var flag = false
-        console.log(result.recordsets[0][0].UserName)
-        if (result.recordsets[0].length != 0) {
-            var flag = true
+        let reviews = []
+        for(var i =0;i<4;i++){
+            reviews[i]=result.recordsets[0][i]
         }
         sql.close()
-        return flag
+        return review
     } catch (err) {
         console.log(err.message)
         sql.close()
@@ -52,8 +52,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.post('/checkReviews', (req, res) => {
     (async () => {
-        let flag = await checkReviews(req.body.Slot1.UserName, req.body.Slot1.stars,req.body.Slot1.UserReviews)
-        res.send({state:flag})
+        let data = await getReviews()
+        console.log(data)
+        res.send(data)
     })()
 });
 
