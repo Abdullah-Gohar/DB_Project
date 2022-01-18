@@ -6,7 +6,8 @@
 </head>
 <link rel="stylesheet" href="allStyle.css">
 <link rel="stylesheet" href="bookNow.css">
-<script src="test.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="bookNow.js"></script>
 
 <body class="font">
     <!-- Title -->
@@ -16,6 +17,28 @@
                 Greenville Resort
             </h2>
         </div>
+
+                <div class="NavBar">
+                    <button class="NavSpace">
+                    </button>
+                    <button class="NavButton" id="current">
+                        Home
+                    </button>
+                
+                    <button class="NavButton" onclick='window.location.href="BookService.html";'>
+                        Book Services
+                    </button>
+                
+                    <button class="NavButton" onclick='window.location.href="https://w3docs.com";'>
+                        Checkout
+                    </button>
+                </div>
+                
+                <div class='login' style="display: inline-block;">
+                    <button class="login-button" id="login">
+                        Log Out
+                    </button>
+                </div>
 
 
     </div>
@@ -28,13 +51,21 @@
             <h3>Book Now</h3>
         </div>
 
-        <form action="/action_page.php">
+        <form>
             <div class="Name">
                 <div>
-                    <label for="Name">Name</label><br>
+                    <label for="Name">First Name</label><br>
                 </div>
                 <div class="TextBox">
-                    <input type="text" id="Name" />
+                    <input type="text" id="FName" />
+                </div>
+            </div>
+            <div class="Name" style = "padding-top: 2%;">
+                <div>
+                    <label for="Name">Last Name</label><br>
+                </div>
+                <div class="TextBox">
+                    <input type="text" id="LName" />
                 </div>
             </div>
             <div class="Label">
@@ -128,7 +159,7 @@
                 </div>
             </div>
             <div class="Button">
-                <input type="button" value="Confirm" style="height: 30px; width: 100px; background-color: salmon;">
+                <input type="button" onclick="submit()" value="Confirm" style="height: 30px; width: 100px; background-color: salmon;">
             </div>
         </form>
     

@@ -22,7 +22,7 @@ x = 6
 num = 7
 reviews = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,2,2,2,2,1,1,1]
 with open('Queries/Insert_Small.sql','w') as file:
-    while(year<2022):
+    while(year<2022 or month<2):
         if(room>17):
             room = 1
             day+=num

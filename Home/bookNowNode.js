@@ -1,7 +1,7 @@
 const config = {
-    user: 'mishal',
+    user: 'admin',
     password: '123',
-    server: 'LAPTOP-3V03CSAF', // You can use 'localhost\\instance' to connect to named instance
+    server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
     database: 'Resort_DB',
     port: 1433,
     trustServerCertificate: true
@@ -19,15 +19,15 @@ async function checkUser(name, pass, radio) {
     })
 
     try {
-        console.log("checkUser: "+name+" : "+pass+" : "+radio)
+        console.log("checkUser: " + name + " : " + pass + " : " + radio)
         let pool = await sql.connect(config)
         let result
-        if(radio=='true'){
+        if (radio == 'true') {
             console.log("client")
             result = await pool.request().query('Select UserName,Pass from Users inner join Client on Users.UserID = Client.ClientID' +
                 " where UserName = '" + name + "' and Pass = '" + pass + "' and ClientStatus = 1")
         }
-        else{
+        else {
             console.log("admin")
             result = await pool.request().query('Select UserName,Pass from Users inner join Admin on Users.UserID = Admin.AdminID' +
                 " where UserName = '" + name + "' and Pass = '" + pass + "'")
@@ -56,8 +56,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.post('/checkUser', (req, res) => {
     (async () => {
-        let flag = await checkUser(req.body.username, req.body.password,req.body.radio)
-        res.send({state:flag})
+        let flag = await checkUser(req.body.username, req.body.password, req.body.radio)
+        res.send({ state: flag })
     })()
 });
 
