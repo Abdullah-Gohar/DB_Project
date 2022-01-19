@@ -6,8 +6,9 @@
 </head>
 <link rel="stylesheet" href="ClientHomeStyles.css">
 <link rel="stylesheet" href="client_header_styles.css">
-<script src="test.js"></script>
-<script src="connec3.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="../logout.js"></script>
+
 
 <body>
     <!-- Title -->
@@ -35,7 +36,7 @@
         </div>
 
         <div class='login' style="display: inline-block;">
-            <button class="login-button" id="login">
+            <button class="login-button" id="login" onclick="logout()">
                 Log Out
             </button>
         </div>
@@ -48,7 +49,7 @@
         <div class="Welcome">
             <div class="Title-Box">
                 <div class="welcome-title">
-                    Welcome <br> <span class = "ClientName">Abdullah Gohar</span>
+                    Welcome <br> <span id = "ClientName">Abdullah Gohar</span>
                 </div>
             </div>
             <div class="Body-Box">
@@ -72,7 +73,7 @@
 
             <div class="Details-Body">
                 <div class="Detail">
-                    <div class="Detail-Heading" id="Rooms">
+                    <div class="Detail-Heading">
                         Rooms Allotted:
                     </div>
                     <div class="Detail-Info" id="Rooms">
@@ -80,18 +81,27 @@
                     </div>
                 </div>
 
-                <div class="Detail">
+                <!-- <div class="Detail">
                     <div class="Detail-Heading" id="Rooms">
                         Rooms Allotted:
                     </div>
                     <div class="Detail-Info" id="Rooms">
                         465, 789, 950
                     </div>
+                </div> -->
+
+                <div class="Detail">
+                    <div class="Detail-Heading">
+                        Services Ordered:
+                    </div>
+                    <div class="Detail-Info" id="Services">
+                        465, 789, 950
+                    </div>
                 </div>
 
 
                 <div class="Detail">
-                    <div class="Detail-Heading" id="Booking-Start">
+                    <div class="Detail-Heading">
                         Booking Start Date:
                     </div>
                     <div class="Detail-Info" id="Booking-Start">
@@ -100,7 +110,7 @@
                 </div>
 
                 <div class="Detail">
-                    <div class="Detail-Heading" id="Booking-End">
+                    <div class="Detail-Heading">
                         Booking End Date:
                     </div>
                     <div class="Detail-Info" id="Booking-End">
@@ -140,5 +150,7 @@
     </footer>
 
 </body>
+
+<script src="client_home.js"></script>
 
 </html>

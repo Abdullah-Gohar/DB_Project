@@ -6,7 +6,7 @@
 </head>
 <link rel="stylesheet" href="allStyle.css">
 <link rel="stylesheet" href="confirmBooking.css">
-<script src="test.js"></script>
+
 
 <body class="font">
     <!-- Title -->
@@ -22,16 +22,16 @@
 
     <!--form   -->
 
-    <div class="mainDiv">
+    <div class="mainDiv" id="main">
         <div>
             <h2>Your room has been booked!</h2>
         </div>
         <div>
             <div>
-                Username: <span class="UserName">Abdullah01</span>
+                Username: <div style="display: inline;" class="UserName" id = "username">Abdullah01</div>
             </div>
             <div>
-                Password:
+                Password: password
             </div>
             <div>
                 Please proceed to login!
@@ -62,5 +62,5 @@
     </footer>
 
 </body>
-
+<script src="confirmBooking.js"></script>
 </html>
