@@ -134,7 +134,7 @@ app.get('/getUsers', (req, res) => {
         let result = await getUsers()
         console.log(result + " 5543")
         let table = ''; //to store html table
-        table = '<table id="table-decoration"><tr class = "tablerows"><th class="tableheader">#</th><th class="tableheader">ID</th><th class="tableheader">FirstName</th><th class="tableheader">LastName</th><th class="tableheader">PhoneNo</th><th class="tableheader">Gender</th>+<th class="tableheader">Email</th></tr>';
+        table = '<table id="table-decoration"><tr class = "tablerows"><th class="tableheader">#</th><th class="tableheader">ID</th><th class="tableheader">FirstName</th><th class="tableheader">LastName</th><th class="tableheader">PhoneNo</th><th class="tableheader">Gender</th><th class="tableheader">Email</th></tr>';
 
         //create html table with data from res.
         for (var i = 0; i < result.recordset.length; i++) {

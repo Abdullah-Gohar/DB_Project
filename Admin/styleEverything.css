@@ -162,5 +162,7 @@ footer{
     border: 1px solid cadetblue;
     background-color: antiquewhite;
 }
-
+#myChart{
+    margin:auto;
+}
   
