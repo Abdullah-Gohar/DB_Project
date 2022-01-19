@@ -9,6 +9,7 @@
 <script src="test.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="login.js"></script>
+<script src="bill.js"></script>
 <!-- <script src = "require.js"></script> -->
 
 <body class="font">
@@ -43,23 +44,23 @@
 
 
         <!--Confirm Checkout-->
-    <div class="ConfirmCheckout">
+    <div class="ConfirmCheckout" id="checkout">
         <div class=ConfirmCheckoutHeader>
             <h3>Are you sure you want to checkout?</h3>
         </div>
         <div class=ConfirmButtons>
             <div class=ConfirmYes>
-                <input type="button" id="ConfirmYes" value="Yes" style="width: 200p;"/>
+                <input type="button" id="ConfirmButtons" value="Yes" style="width: 75px;" onclick="displayBill()"/>
             </div>
             <div class=ConfirmNo>
-                <input type="button" id="ConfirmNo" value="No" style="width: 200p;"/>
+                <input type="button" id="ConfirmButtons" value="No" style="width: 75px;"/>
             </div>
         </div>
     </div>
 
     <!--Bill Details  -->
 
-    <div class = "Bill" style = "display: none;">
+    <div class = "Bill" style = "display: none;" id="Bill">
         <div class = "Weclome">
             <h2>Thank You for Staying!</h2>
         </div>

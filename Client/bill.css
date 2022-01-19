@@ -218,25 +218,34 @@ footer{
 
 .ConfirmCheckoutHeader{
     text-align: center;
+    padding: 2%;
 }
 
 .ConfirmButtons{
     display: flex;
     flex-direction: row;
-    margin-left: 46%;
+    margin-left: 42%;
 }
 
 .ConfirmNo{
-    margin-left: 2%;
-    background-color: coral;
+    margin-left: 7%;
+    width: 10%;
+    text-align: center;
+
+}
+.ConfirmYes{
+    width: 10%;
+    text-align: center;
+
 }
 
 .ConfirmCheckout{
-    margin:10%;
+    
+    margin-top: 6%;
+    margin-bottom: 8.2%
+    
 }
-.ConfirmNo:hover{
+#ConfirmButtons:hover{
     cursor: pointer;
-    padding: 8px;
     background-color: coral;
-    border-radius: 20px; 
 }
