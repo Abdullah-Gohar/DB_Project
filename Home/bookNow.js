@@ -41,6 +41,8 @@ function getRoomData(){
 function validate(){
     document.getElementById("InvalidErrorText").style.display = "none"
     document.getElementById("IncompleteErrorText").style.display = "none"
+    document.getElementById("InvalidCheckInDate").style.display = "none"
+    document.getElementById("InvalidCheckOutDate").style.display = "none"
     first_name=  document.getElementById("FName").value
     last_name = document.getElementById("LName").value
     gender=  $('input[name=Gender]:checked').val()
@@ -111,9 +113,8 @@ function submit() {
             function (data, status) {
                 // console.log(data.state + "   " + status)
                 // window.alert(data.state + "   "+ status)
-                username = data;
-                window.alert(username)
-                sessionStorage.setItem("username",username)
+                sessionStorage.setItem("username",data.username)
+                sessionStorage.setItem("id",data.id)
                 window.location.href="confirmBooking.html"
             });
     }

@@ -62,7 +62,7 @@ async function postClient(fname, lname, gender,email,phone,checkin,checkout,room
             r = await pool.request().query("Update Room set RoomState = 1 where RoomNo = "+rooms[i].RNo)
         }
         sql.close()
-        return UserName
+        return {username: UserName,id:clientID}
     } catch (err) {
         console.log(err.message)
         sql.close()
