@@ -63,7 +63,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.get('/getClientData', (req, res) => {
     (async () => {
-        console.log(req.query.id)
         let data = await getClientData(req.query.id)
         // console.log(data)
         res.send(data)
