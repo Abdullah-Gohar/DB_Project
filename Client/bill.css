@@ -197,3 +197,46 @@ footer{
     padding-left: 2%;
     text-align: center;
 }
+
+.ReviewButton{
+    margin-left: 46%;
+    margin-top: 2%;
+}
+
+#LeaveReview{
+    padding: 8px;
+    background-color: coral;
+    border-radius: 20px;
+}
+
+#LeaveReview:hover{
+    cursor: pointer;
+    background-color: rgb(252, 157, 122);
+    /* font-weight: 600; */
+    transition: 0.1s;   
+}
+
+.ConfirmCheckoutHeader{
+    text-align: center;
+}
+
+.ConfirmButtons{
+    display: flex;
+    flex-direction: row;
+    margin-left: 46%;
+}
+
+.ConfirmNo{
+    margin-left: 2%;
+    background-color: coral;
+}
+
+.ConfirmCheckout{
+    margin:10%;
+}
+.ConfirmNo:hover{
+    cursor: pointer;
+    padding: 8px;
+    background-color: coral;
+    border-radius: 20px; 
+}
