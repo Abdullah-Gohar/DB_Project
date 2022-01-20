@@ -17,14 +17,14 @@ room = 1
 review_no =100
 day = 1
 month = 1
-year = 2020
+year = 2019
 x = 6
 num = 7
 reviews = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,2,2,2,2,1,1,1]
 with open('Queries/Insert_Small.sql','w') as file:
     while(year<2022 or month<2):
         if(room>17):
-            room = 1
+            room = random.randint(1,3)
             day+=num
             num = random.randint(1,7)
         first = random.choice(names)
@@ -50,7 +50,7 @@ with open('Queries/Insert_Small.sql','w') as file:
         query5 = f"Insert into FoodReservation \nvalues({x},Default,{random.randint(1,20)})"
         query6 = f"Insert into Review \nvalues({review_no},{random.choice(reviews)},'Speechless',{x})"
         query7 = f"Insert into Bill \nvalues ({review_no},'{date2}',{decimal.Decimal(random.randrange(25500, 999999))/100},{x})"
-        room+=1
+        room+=random.randint(1,3)
         review_no+=1
         x+=1
         
