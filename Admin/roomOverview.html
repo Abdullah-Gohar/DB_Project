@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room Overview</title>
-    <script src="script.js"></script>
-    <script src="connection.js"></script>
+   
+   <!-- <script src="connection.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href = "styleEverything.css">
    
 </head>
@@ -28,14 +30,14 @@
         <div class="dropdown">
         <button onclick="toggleEco()" class="button"  >Economy</button>
         <div id="dropdownEco" class="dropdown-content">
-          <a href="#" id = "room5" onclick="toggleroom(this.id)">Room 5</a>
-          <a href="#" id = "room6" onclick = "toggleroom(this.id)">Room 6</a>
-          <a href="#"  id = "room7" onclick = "toggleroom(this.id)">Room 7</a>
-          <a href="#"  id = "room8" onclick = "toggleroom(this.id)">Room 8</a>
-          <a href="#"  id = "room9" onclick = "toggleroom(this.id)">Room 9</a>
-          <a href="#"  id = "room10" onclick = "toggleroom(this.id)">Room 10</a>
-          <a href="#"  id = "room11" onclick = "toggleroom(this.id)">Room 11</a>
-          <a href="#"  id = "room12" onclick = "toggleroom(this.id)">Room 12</a> 
+          <a href="#"  id = "5" onclick="getDataRoom(this.id)">Room 5</a>
+          <a href="#"  id = "6" onclick = "getDataRoom(this.id)">Room 6</a>
+          <a href="#"  id = "7" onclick = "getDataRoom(this.id)">Room 7</a>
+          <a href="#"  id = "8" onclick = "getDataRoom(this.id)">Room 8</a>
+          <a href="#"  id = "9" onclick = "getDataRoom(this.id)">Room 9</a>
+          <a href="#"  id = "10" onclick = "getDataRoom(this.id)">Room 10</a>
+          <a href="#"  id = "11" onclick = "getDataRoom(this.id)">Room 11</a>
+          <a href="#"  id = "12" onclick = "getDataRoom(this.id)">Room 12</a> 
           
         </div>
       </div>
@@ -44,10 +46,10 @@
       <div class="dropdown">
         <button onclick="toggleLux()" class="button" >Luxury</button>
         <div id="dropdownLux" class="dropdown-content">
-          <a href="#"  id = "room1" onclick = "toggleroom(this.id)">Room 1</a>
-          <a href="#"  id = "room2" onclick = "toggleroom(this.id)">Room 2</a>
-          <a href="#"  id = "room3" onclick = "toggleroom(this.id)">Room 3</a>
-          <a href="#"  id = "room4" onclick = "toggleroom(this.id)">Room 4</a>
+          <a href="#"  id = "1" onclick = "getDataRoom(this.id)">Room 1</a>
+          <a href="#"  id = "2" onclick = "getDataRoom(this.id)">Room 2</a>
+          <a href="#"  id = "3" onclick = "getDataRoom(this.id)">Room 3</a>
+          <a href="#"  id = "4" onclick = "getDataRoom(this.id)">Room 4</a>
         
         </div>
       </div>
@@ -56,10 +58,10 @@
       <div class="dropdown">
         <button onclick="toggleSuite()" class="button" >Suite</button>
         <div id="dropdownSuite" class="dropdown-content">
-          <a href="#"  id = "room13" onclick = "toggleroom(this.id)" >Room 13</a>
-          <a href="#"  id = "room14" onclick = "toggleroom(this.id)">Room 14</a>
-          <a href="#" id = "room15" onclick = "toggleroom(this.id)">Room 15</a>
-          <a href="#" id = "room16" onclick = "toggleroom(this.id)">Room 16</a>  
+          <a href="#"  id = "13" onclick = "getDataRoom(this.id)" >Room 13</a>
+          <a href="#"  id = "14" onclick = "getDataRoom(this.id)">Room 14</a>
+          <a href="#" id = "15" onclick = "getDataRoom(this.id)">Room 15</a>
+          <a href="#" id = "16" onclick = "getDataRoom(this.id)">Room 16</a>  
         </div>
         </div>
         </li>
@@ -67,7 +69,7 @@
         <div class="dropdown">
             <button onclick="togglePh()" class="button" >PentHouse</button>
             <div id="dropdownPh" class="dropdown-content">
-              <a href="#" id = "room17" onclick = "toggleroom(this.id)">Room 17
+              <a href="#" id = "17" onclick = "getDataRoom(this.id)">Room 17
               </a>
             </div>
             </div>
@@ -76,5 +78,12 @@
       <div>
        
  </ul>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
+
+ 
+
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -22,7 +22,7 @@ padding:3px;
 }
 
 
-a,.name,.fancybox,.button,.dropdown-content a,.stats,.logout,span,.tableheader{
+a,.name,.fancybox,.button,.dropdown-content a,.stats,.logout,span,.tableheader,.tablecell,.searchlabel{
 font-family: 'Be Vietnam Pro', sans-serif;
 text-decoration: none;
 color:cadetblue;
@@ -132,11 +132,12 @@ footer{
     padding-bottom: 2.5%;
     font-variant: small-caps;
 }
-.table-decoration{
+#table-decoration{
     width:100%;
 }
 .tableheader{
     width:220px;
+    font:120%;
     text-align:center;
     background-color:rgb(238, 226, 226)
 }
@@ -147,7 +148,21 @@ footer{
     margin-bottom: 20px;
 }
 .tablerows{
-    border-right: 1px solid black;
+    border: 1px solid cadetblue;
 }
-
+.tablecell{
+    color:black;
+    border:1px solid cadetblue ;
+    background-color: antiquewhite;
+    text-align:center;
+    padding : 1%;
+}
+.inputstyle{
+    width:25%;
+    border: 1px solid cadetblue;
+    background-color: antiquewhite;
+}
+#myChart{
+    margin:auto;
+}
   
