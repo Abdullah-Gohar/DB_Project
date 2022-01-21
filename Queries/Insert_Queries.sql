@@ -43,5 +43,8 @@ values(01,'17-Nov-2020',799.99,05)
 
 
 
+Select * from Client
+order by clientid desc
 
-
+Select * from FoodReservation
+where clientid = 2003

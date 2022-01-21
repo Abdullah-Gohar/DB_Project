@@ -95,7 +95,7 @@ create table Orders(
 )
 
 create table FoodReservation(
-	ClientNo int Foreign Key references Client(ClientID),
+	ClientID int Foreign Key references Client(ClientID),
 	FoodPrice decimal(12,2) default(19.99),
 	Primary Key(ClientNo),
 	FoodPeople int default(1)
