@@ -37,13 +37,16 @@ function RefreshStats( ){
            }
 
          if(data.b){
-            document.getElementById("BowlingBookButton").style.display="none"   
+            document.getElementById("BowlingBookButton").style.display="none" 
+            document.getElementById("BowlingBooked").style.display="inline-block"  
         }
         if(data.c){
             document.getElementById("MovieBookButton").style.display="none"
+            document.getElementById("MovieBooked").style.display="inline-block"
         }
         if(data.f){
             document.getElementById("FoodBookButton").style.display="none"
+            document.getElementById("FoodBooked").style.display="inline-block"
         }
         });
 

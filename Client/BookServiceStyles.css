@@ -7,7 +7,13 @@
     height:20%;
     background-color:lavenderblush;
 }
-
+.Boooked{
+    float:right;
+    margin-top: 10%;
+    color: black;
+    font-size: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .ServicesIntro{
     font-size: 250%;
     text-align: center;
