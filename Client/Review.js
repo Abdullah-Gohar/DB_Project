@@ -11,8 +11,6 @@ function validate(){
 }
 
 function submit_data() {
-    console.log("Function Call")
-    window.alert("Func Call")
     if(validate()){
 
         $.post("http://localhost:8080/submitReview",
@@ -23,7 +21,7 @@ function submit_data() {
                 stars: $('input[name=star]:checked').val()
             },
             function (data, status) {
-                window.location.href = "client_home.html"
+                window.location.href = "..\\Home\\landing.html"
             }
         );
     }

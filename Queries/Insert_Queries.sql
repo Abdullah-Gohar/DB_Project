@@ -14,17 +14,6 @@ values (1,4,599.99,Default),(2,3,399.99,Default),(3,3,399.99,Default),(4,3,399.9
 (13,2,99.99,Default),(14,2,99.99,Default),(15,2,99.99,Default),(16,2,99.99,Default),
 (17,2,99.99,Default)
 
-Insert into Penthouse(RoomNo)
-values (17)
-
-Insert into Suite(RoomNo)
-values(16),(15),(14),(13)
-
-Insert into Economy(RoomNo)
-values (5),(6),(7),(8),(9),(10),(11),(12)
-
-Insert into Luxury(RoomNo)
-values (1),(2),(3),(4)
 
 Insert into Service(ServiceNo,ServiceName)
 values (1,'Tennis'),(2,'Bowling'),(3,'Movies')
