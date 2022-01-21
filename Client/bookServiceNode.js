@@ -23,12 +23,38 @@ async function BookService(SNo,ClientId) {
         console.log("Insert into Orders values ("+ClientId+"  ,"+ SNo+")")
 
         await pool.request().query("Insert into Orders values ("+ClientId+"  ,"+ SNo+")")
+
+        
         sql.close()
     } catch (err) {
         console.log(err.message)
         sql.close()
     }
 }
+
+async function bookFood(ClientId,people) {
+    const sql = require('mssql')
+    const { boolean } = require('webidl-conversions')
+
+
+    sql.on('error', err => {
+        console.log(err.message)
+    })
+
+    try {
+        let pool = await sql.connect(config)
+        console.log("Insert into FoodReservation values ("+ClientId+"  ,Default, "+ people+")")
+
+        await pool.request().query("Insert into FoodReservation values ("+ClientId+"  ,Default, "+ people+")")
+
+        
+        sql.close()
+    } catch (err) {
+        console.log(err.message)
+        sql.close()
+    }
+}
+
 
 
 
@@ -46,6 +72,12 @@ app.post('/bookService', (req, res) => {
     })()
 });
 
+app.post('/bookFood', (req, res) => {
+    (async () => {
+        await bookFood(req.body.ClientId,req.body.Food)
+        // console.log(data)
+    })()
+});
 const port = 8080;
 
 app.listen(port, () => {
