@@ -55,6 +55,56 @@ async function bookFood(ClientId,people) {
     }
 }
 
+async function RefreshStats(id) {
+    const sql = require('mssql')
+    const { boolean } = require('webidl-conversions')
+
+
+    sql.on('error', err => {
+        console.log(err.message)
+    })
+
+    try {
+        Tennis=false
+        Bowling=false
+        Cinema= false
+        Food=false
+
+        let pool = await sql.connect(config)
+         Service =await (await pool.request().query("Select ServiceNo as SNo from Orders where ClientId="+id)).recordset
+         for ( i=0; i<Service.length; i++){
+             s=Service[i].SNo
+             if(s==1){
+                 Tennis  = true
+             }
+             else if(s==2){
+                 Bowling = true
+             }
+             else if(s==3){
+                 Cinema = true
+             }
+         }
+        f =  await (await pool.request().query("select ClientNo from FoodReservation where ClientNo="+id)).recordset
+        if(f.length==1){
+            Food=true
+        }
+
+            Data= {
+               t:Tennis,
+               b:Bowling,
+               c:Cinema,
+               f:Food
+             }
+
+        
+        sql.close()
+        return Data
+    } catch (err) {
+        console.log(err.message)
+        sql.close()
+    }
+}
+
 
 
 
@@ -76,6 +126,14 @@ app.post('/bookService', (req, res) => {
 app.post('/bookFood', (req, res) => {
     (async () => {
         await bookFood(req.body.ClientId,req.body.Food)
+        // console.log(data)
+    })()
+});
+
+app.get('/RefreshStats', (req, res) => {
+    (async () => {
+        let data  = await RefreshStats(req.query.id)
+        res.send(data)
         // console.log(data)
     })()
 });
