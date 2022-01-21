@@ -12,3 +12,14 @@ function bookService(SNo) {
 
 }
 
+function bookFood(FoodPeople){
+
+    $.post("http://localhost:8080/bookFood",
+            {
+                Food: FoodPeople,ClientId: 300
+            },
+            function (data, status) {
+
+            });
+
+}
