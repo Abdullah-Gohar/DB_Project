@@ -1,3 +1,5 @@
+window.onload=RefreshStats()
+
 
 function bookService(SNo) {
         $.post("http://localhost:8080/bookService",
@@ -5,7 +7,7 @@ function bookService(SNo) {
                 serviceNo: SNo,  ClientId: 300
             },
             function (data, status) {
-
+                window.location.reload()
             });
 
 
@@ -18,7 +20,29 @@ function bookFood(FoodPeople){
                 Food: FoodPeople,ClientId: 300
             },
             function (data, status) {
-
+                window.location.reload()
             });
+
+}
+
+function RefreshStats( ){
+
+    
+    $.get("http://localhost:8080/refreshStats?id=1098",
+        function (data) {
+           if(data.t){
+            document.getElementById("TennisBookButton").style.display="none"
+           }
+
+         if(data.b){
+            document.getElementById("BowlingBookButton").style.display="none"   
+        }
+        if(data.c){
+            document.getElementById("MovieBookButton").style.display="none"
+        }
+        if(data.f){
+            document.getElementById("FoodBookButton").style.display="none"
+        }
+        });
 
 }
