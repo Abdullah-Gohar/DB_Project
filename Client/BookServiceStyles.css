@@ -7,11 +7,10 @@
     height:20%;
     background-color:lavenderblush;
 }
-.Boooked{
+.Booked{
     float:right;
-    margin-top: 10%;
-    color: black;
-    font-size: 10%;
+    color: rgb(253, 136, 90);
+    font-size: 120%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .ServicesIntro{

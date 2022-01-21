@@ -14,21 +14,25 @@ function bookService(SNo) {
 
 }
 
-function bookFood(FoodPeople){
-
+function bookFood(){
+    people = document.getElementById("quantity").value;
+    if(people>0){
     $.post("http://localhost:8080/bookFood",
             {
-                Food: FoodPeople,ClientId: 2003
+                Food: people,ClientId: 2003
             },
             function (data, status) {
             });
-
-    window.location.reload()
+        window.location.reload()
+    }
+    else{
+        document.getElementById("People-Error").style.display="inline-block"
+    }
 }
 
 function RefreshStats( ){
 
-    
+    document.getElementById("People-Error").style.display = "none"
     $.get("http://localhost:8080/refreshStats?id=2003",
         function (data) {
            if(data.t){
