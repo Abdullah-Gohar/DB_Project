@@ -2,7 +2,7 @@
 window.onload = getClientData()
 
 function getClientData(){
-    $.get("http://localhost:8080/getClientData?id="+270,
+    $.get("http://localhost:8080/getClientData?id="+270,sessionStorage.getItem('id')
         {
         },
         function (data, status) {

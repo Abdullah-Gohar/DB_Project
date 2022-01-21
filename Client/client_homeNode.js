@@ -20,7 +20,6 @@ async function getClientData(id) {
 
     try {
         let pool = await sql.connect(config)
-        let result
 
         // console.log("review")
         client_name = await (await pool.request().query("Select ClientFirstName as fname,ClientLastName as lname from Client where ClientID = "+id)).recordset
