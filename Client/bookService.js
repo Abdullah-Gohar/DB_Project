@@ -8,8 +8,8 @@ function bookService(SNo) {
                 
             },
             function (data, status) {
-                window.location.reload()
             });
+    window.location.reload()
 
 
 }
@@ -21,18 +21,19 @@ function bookFood(FoodPeople){
                 Food: FoodPeople,ClientId: 2003
             },
             function (data, status) {
-                window.location.reload()
             });
 
+    window.location.reload()
 }
 
 function RefreshStats( ){
 
     
-    $.get("http://localhost:8080/refreshStats?id=1098",
+    $.get("http://localhost:8080/refreshStats?id=2003",
         function (data) {
            if(data.t){
             document.getElementById("TennisBookButton").style.display="none"
+            document.getElementById("TennisBooked").style.display="inline-block"
            }
 
          if(data.b){
