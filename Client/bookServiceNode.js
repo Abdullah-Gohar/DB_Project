@@ -9,7 +9,7 @@ const config = {
 
 
 
-async function BookService(SNo,ClientId) {
+async function bookService(SNo,ClientId) {
     const sql = require('mssql')
     const { boolean } = require('webidl-conversions')
 
@@ -41,7 +41,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.post('/bookService', (req, res) => {
     (async () => {
-        await bookService(req.body.SNo, req.body.ClientId)
+        console.log("SNO: "+req.body.SNo)
+        await bookService(req.body.serviceNo, req.body.ClientId)
         // console.log(data)
     })()
 });
