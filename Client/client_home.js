@@ -2,7 +2,6 @@
 window.onload = getClientData()
 
 function getClientData(){
-    window.alert(sessionStorage.getItem("id"))
     $.get("http://localhost:8080/getClientData?id="+sessionStorage.getItem("id"),
         {
         },
