@@ -1,21 +1,13 @@
-// const config = {
-//     user: 'admin1',
-//     password: '123',
-//     server: 'DESKTOP-IO2BR35',
-//     database: 'Resort_DB',
-//     port: 1433,
-//     trustServerCertificate: true
-//   }
-
 const config = {
-    user: 'admin',
+    user: 'admin1',
     password: '123',
-    server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
+    server: 'DESKTOP-IO2BR35',
     database: 'Resort_DB',
     port: 1433,
     trustServerCertificate: true
-<<<<<<< HEAD
   }
+
+
 
 // const config = {
 //     user: 'admin',
@@ -25,9 +17,6 @@ const config = {
 //     port: 1433,
 //     trustServerCertificate: true
 // }
-=======
-}
->>>>>>> 542bc07319b19c98ef901379dc2c908c0c4f6783
 
   
 
