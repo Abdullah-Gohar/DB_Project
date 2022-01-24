@@ -70,7 +70,7 @@ async function getRoom(id){
   })
   try {
     let pool = await sql.connect(config)
-    roomState = await pool.request().query('select RoomState from Room as State WHERE RoomNo ='+id)
+    roomState = await pool.request().query('select RoomState as State from Room WHERE RoomNo ='+id)
     roomRating = await pool.request().query(' SELECT Cast(AVG(Cast((R.ReviewRating) as Decimal(3,2))) as Decimal(3,2)) as rating FROM Review as R INNER JOIN Booking as B  on R.ClientID = B.ClientID  WHERE B.RoomNo = '+id+'Group BY RoomNo')
    // console.log(roomState.recordset[0].State);
     let roomStateSpan = '';

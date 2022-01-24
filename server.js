@@ -203,7 +203,7 @@ async function RefreshStats(id) {
                 Cinema = true
             }
         }
-        f = await (await pool.request().query("select ClientNo from FoodReservation where ClientNo=" + id)).recordset
+        f = await (await pool.request().query("select ClientID from FoodReservation where ClientID=" + id)).recordset
         if (f.length == 1) {
             Food = true
         }
@@ -643,6 +643,193 @@ app.get('/getBillData', (req, res) => {
 
 
 
+
+async function getUsers() {
+    const sql = require('mssql')
+    const { boolean } = require('webidl-conversions')
+
+
+    sql.on('error', err => {
+        console.log(err.message)
+    })
+
+    try {
+        let pool = await sql.connect(config)
+
+        result = await pool.request().query('Select * from Client')
+
+        sql.close()
+        return result
+    } catch (err) {
+        console.log(err.message)
+        sql.close()
+    }
+}
+
+app.get('/getUsers', (req, res) => {
+    (async () => {
+        let result = await getUsers()
+        console.log(result + " 5543")
+        let table = ''; //to store html table
+        table = '<table id="table-decoration"><tr class = "tablerows"><th class="tableheader">#</th><th class="tableheader">ID</th><th class="tableheader">FirstName</th><th class="tableheader">LastName</th><th class="tableheader">PhoneNo</th><th class="tableheader">Gender</th><th class="tableheader">Email</th></tr>';
+
+        //create html table with data from res.
+        for (var i = 0; i < result.recordset.length; i++) {
+            // console.log(result.recordsets)
+            table += '<tr  class="tablerows"><td class="tablecell">' + (i + 1) + '</td><td class="tablecell">' + result.recordset[i].ClientID + '</td><td class="tablecell">' + result.recordset[i].ClientFirstName + '</td><td class="tablecell">' + result.recordset[i].ClientLastName + '</td><td class="tablecell">' + result.recordset[i].PhoneNo + '</td><td class="tablecell">' + result.recordset[i].Gender + '</td><td class="tablecell">' + result.recordset[i].Email + '</td></tr>';
+
+        }
+
+        table += "</table>"
+
+
+        res.send(table)
+    })()
+});
+
+
+
+async function getBookings() {
+    const sql = require('mssql')
+    const { boolean } = require('webidl-conversions')
+
+
+    sql.on('error', err => {
+        console.log(err.message)
+    })
+    try {
+        let pool = await sql.connect(config)
+
+        booked = []
+        for (i = 1; i < 18; i++) {
+            booked[i] = (await pool.request().query('SELECT COUNT(b.RoomNo) as no1 FROM Booking as b inner join Room as r on r.RoomNo = b.RoomNo WHERE Month(b.CheckInDate) = Month(GETDATE()) AND YEAR(b.CheckInDate) = YEAR(GETDATE()) AND r.RoomNo = ' + i)).recordset[0].no1
+        }
+
+        final = {
+            r1: booked[1], r2: booked[2], r3: booked[3], r4: booked[4], r5: booked[5],
+            r6: booked[6], r7: booked[7], r8: booked[8], r9: booked[9], r10: booked[10],
+            r11: booked[11], r12: booked[12], r13: booked[13], r14: booked[14], r15: booked[15],
+            r16: booked[16], r17: booked[17]
+        }
+        sql.close()
+        return final
+    } catch (err) {
+        console.log(err.message)
+        sql.close()
+    }
+}
+
+async function getRoom(id) {
+    const sql = require('mssql')
+    const { boolean } = require('webidl-conversions')
+
+
+    sql.on('error', err => {
+        console.log(err.message)
+    })
+    try {
+        let pool = await sql.connect(config)
+        roomState = await pool.request().query('select RoomState  as State from Room WHERE RoomNo =' + id)
+        roomRating = await pool.request().query(' SELECT Cast(AVG(Cast((R.ReviewRating) as Decimal(3,2))) as Decimal(3,2)) as rating FROM Review as R INNER JOIN Booking as B  on R.ClientID = B.ClientID  WHERE B.RoomNo = ' + id + 'Group BY RoomNo')
+        // console.log(roomState.recordset[0].State);
+        let roomStateSpan = '';
+        let roomRatingResult = '';
+        if (roomState.recordset[0].State == 1) {
+            roomStateSpan = '<span>Booked</span>'
+
+        }
+        else {
+            roomStateSpan = '<span>Free</span>'
+        }
+        roomRatingResult = '<span>' + roomRating.recordset[0].rating + '</span>'
+        final = {
+            rS: roomStateSpan, rR: roomRatingResult
+        }
+        return final
+
+    }
+    catch (err) {
+        console.log(err.message)
+        sql.close()
+    }
+
+}
+
+app.get('/getBookings', (req, res) => {
+    (async () => {
+
+        let result = await getBookings()
+        //let value ='';
+        // let moreValue ='';
+        //  console.log(result.recordset[0].freeRoom)
+        //  console.log(moreResult.recordset[0].bookedRoom)
+        //   value= '<span>'+result.recordset[0].freeRoom+'</span>'
+        // moreValue = '<span>'+moreResult.recordset[0].bookedRoom+'</span>'
+        res.send(result)
+    })()
+});
+
+
+app.get('/getRoom', (req, res) => {
+    (async () => {
+        let result = await getRoom(req.query.id)
+        //let value ='';
+        // let moreValue ='';
+        //  console.log(result.recordset[0].freeRoom)
+        //  console.log(moreResult.recordset[0].bookedRoom)
+        //  console.log(moreResult.recordset[0].bookedRoom)
+        //   value= '<span>'+result.recordset[0].freeRoom+'</span>'
+        // moreValue = '<span>'+moreResult.recordset[0].bookedRoom+'</span>'
+        res.send(result)
+    })()
+});
+
+
+async function getAdminStats() {
+    const sql = require('mssql')
+    const { boolean } = require('webidl-conversions')
+
+
+    sql.on('error', err => {
+        console.log(err.message)
+    })
+
+    try {
+        let pool = await sql.connect(config)
+
+        freeResult = await pool.request().query('SELECT COUNT(RoomNo) as freeRoom FROM Room WHERE RoomState = 0')
+        bookedResult = await pool.request().query('SELECT COUNT(RoomNo) as bookedRoom FROM Room WHERE RoomState = 1')
+        averageResult = await pool.request().query('SELECT Cast(AVG(Cast((ReviewRating) as Decimal(3,2))) as Decimal(3,2)) as avg FROM Review')
+        bookingThisMonthResult = await pool.request().query('SELECT COUNT(*) as countofBooking FROM BOOKING  WHERE Month(CheckInDate) = Month(GETDATE()) AND YEAR(CheckInDate) = YEAR(GETDATE())')
+        servicesThisMonthResult = await pool.request().query('SELECT COUNT(*) as countofServices FROM ORDERS AS o INNER JOIN BOOKING AS B  ON B.ClientID =  o.ClientID WHERE Month(CheckInDate) = Month(GETDATE()) AND YEAR(CheckInDate) = YEAR(GETDATE())')
+        averageRating = await pool.request().query('SELECT Cast(AVG(Cast((R.ReviewRating) as Decimal(3,2))) as Decimal(3,2)) as avgRatingThisMonth FROM Review as R  INNER JOIN BOoking as B ON R.ClientID = B.ClientID WHERE Month(B.CheckInDate) = Month(GETDATE()) AND YEAR(B.CheckInDate) = YEAR(GETDATE())')
+        freevalue = '<span>' + freeResult.recordset[0].freeRoom + '</span>'
+        bookedValue = '<span>' + bookedResult.recordset[0].bookedRoom + '</span>'
+        averageValue = '<span>' + averageResult.recordset[0].avg + '</span>'
+        bookingThisMonthValue = '<span>' + bookingThisMonthResult.recordset[0].countofBooking + '</span>'
+        ServicesThisMonthValue = '<span>' + servicesThisMonthResult.recordset[0].countofServices + '</span>'
+        averageRatingValue = '<span>' + averageRating.recordset[0].avgRatingThisMonth + '</span>'
+        final = { fv: freevalue, bv: bookedValue, av: averageValue, btv: bookingThisMonthValue, sv: ServicesThisMonthValue, arv: averageRatingValue }
+        sql.close()
+        return final
+    } catch (err) {
+        console.log(err.message)
+        sql.close()
+    }
+}
+
+app.get('/getAdminStats', (req, res) => {
+    (async () => {
+        let result = await getAdminStats()
+        let value = '';
+        let moreValue = '';
+        //  console.log(result.recordset[0].freeRoom)
+        //  console.log(moreResult.recordset[0].bookedRoom)
+        //   value= '<span>'+result.recordset[0].freeRoom+'</span>'
+        // moreValue = '<span>'+moreResult.recordset[0].bookedRoom+'</span>'
+        res.send(result)
+    })()
+});
 
 
 
