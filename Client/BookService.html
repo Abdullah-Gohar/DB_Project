@@ -94,8 +94,8 @@
         <div class = "Booking" id="TennisBookButton">
             <button class = "BookingButton" onclick="bookService(1)">Book Now</button>
         </div>
-        <div class = "Booking" id="TennisBooked" style="display: none;"> 
-            This ServiceHas Been Booked
+        <div class = "Booked" id="TennisBooked" style="display: none;"> 
+            This Service Has Been Booked
         </div>
     </div>
 
@@ -144,8 +144,8 @@
         <div class="Booking" id="BowlingBookButton">
             <button class="BookingButton" onclick="bookService(2)">Book Now</button>
         </div>
-        <div class = "Booking" id="BowlingBooked" style="display: none;"> 
-            This ServiceHas Been Booked
+        <div class = "Booked" id="BowlingBooked" style="display: none;"> 
+            This Service Has Been Booked
         </div>
     </div>
 
@@ -194,8 +194,8 @@
         <div class="Booking" id="MovieBookButton">
             <button class="BookingButton" onclick="bookService(3)">Book Now</button>
         </div>
-        <div class = "Booking" id="MovieBooked" style="display: none;"> 
-            This ServiceHas Been Booked
+        <div class = "Booked" id="MovieBooked" style="display: none;"> 
+            This Service Has Been Booked
         </div>
     </div>
 
@@ -243,11 +243,18 @@
             </div>
         </div>
     
-        <div class="Booking" id="FoodBookButton">
-            <button class="BookingButton" onclick="bookFood(4)" >Book Now</button>
+        <div class="Booking" id="FoodBookButton" style="display: flex; flex-direction:column; align-items:center; margin-top:15%">
+            <button class="BookingButton" onclick="bookFood()" >Book Now</button>
+            <div style="margin-top: 5%;">
+                <label for="quantity">Number of People:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="5" value = "0">
+            </div>
+            <div id="People-Error" style="color:red; font-size:80%; text-align:center; display:none; margin-top:2%">
+                Please enter correct number of people
+            </div>
         </div>
-        <div class = "Booking" id="FoodBooked" style="display: none;"> 
-            This ServiceHas Been Booked
+        <div class = "Booked" id="FoodBooked" style="display: none;"> 
+            This Service Has Been Booked
         </div>
     </div>
 
