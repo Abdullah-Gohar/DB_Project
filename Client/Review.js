@@ -1,7 +1,6 @@
 function validate(){
     comments=  document.getElementById("comments").value
     stars=  $('input[name=star]:checked').val()
-    window.alert(comments + " : " + stars + (!comments || !stars))
     if(!comments || !stars){
         document.getElementById("Error-Text").style.display="block"
         return false
@@ -21,9 +20,14 @@ function submit_data() {
                 stars: $('input[name=star]:checked').val()
             },
             function (data, status) {
-                window.location.href = "..\\Home\\landing.html"
+                document.getElementById("Review").style.display = "none"
+                document.getElementById("Goodbye").style.display="flex";
+                setTimeout(() => { window.location.href = "..\\Home\\landing.html" }, 2000);
+                
             }
         );
+
+
     }
 
 

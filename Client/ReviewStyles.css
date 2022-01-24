@@ -130,3 +130,26 @@ textarea {
     font-size: 100%;
     margin-right: 9%;
 }
+
+#Goodbye{
+    display: none;
+    align-items: center;
+    width: 100%;
+    height:60%;
+    background-color:lavenderblush;
+}
+
+.Goodbye{
+    font-size: 200%;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    margin-left: 35%;
+}
+
+.Redirect{
+    margin-top: 20%;
+    font-size: 80%;
+    font-style: italic;
+    font-weight: 500;
+}
