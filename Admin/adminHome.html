@@ -8,6 +8,7 @@
     <link rel="stylesheet" href = "styleEverything.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="connectionStats.js"></script>
+    <script src = "logout.js"></script>
 
    
 </head>
@@ -15,11 +16,11 @@
  
         <nav class="navbar">
             <ul>
-                <li class="name"><a href ="adminHome.html"></a><Strong>Admin </Strong></li>
+                <li ><a href ="adminHome.html"><Strong>Admin </Strong><a></a></li>
                 <li><a href="roomOverview.html"><strong>Room Overview</strong> </a></li>
                 <li><a href="clientHistory.html"><strong>Client History</strong></a></li>
                
-                <li> <button class="logout">Logout</button></li>
+                <li> <button class="logout" onclick="logout()">Logout</button></li>
                
             </ul>
         </nav>
