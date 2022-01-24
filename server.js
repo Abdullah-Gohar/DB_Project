@@ -491,13 +491,14 @@ async function checkUser(name, pass, radio) {
             result = await pool.request().query('Select UserName,Pass from Users inner join Admin on Users.UserID = Admin.AdminID' +
                 " where UserName = '" + name + "' and Pass = '" + pass + "'")
         }
+        id = await (await pool.request().query("Select UserID as id from Users where UserName = '" + name+"'")).recordset[0].id
         var flag = false
         console.log(result.recordsets[0][0].UserName)
         if (result.recordsets[0].length != 0) {
             var flag = true
         }
         sql.close()
-        return flag
+        return {check:flag,id:id}
     } catch (err) {
         console.log(err.message)
         sql.close()
@@ -509,8 +510,8 @@ async function checkUser(name, pass, radio) {
 
 app.post('/checkUser', (req, res) => {
     (async () => {
-        let flag = await checkUser(req.body.username, req.body.password, req.body.radio)
-        res.send({ state: flag })
+        let result = await checkUser(req.body.username, req.body.password, req.body.radio)
+        res.send({ state: result.check,id:result.id })
     })()
 });
 
