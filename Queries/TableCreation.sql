@@ -75,12 +75,12 @@ create table Orders(
 create table FoodReservation(
 	ClientID int Foreign Key references Client(ClientID),
 	FoodPrice decimal(12,2) default(19.99),
-	Primary Key(ClientNo),
+	Primary Key(ClientID),
 	FoodPeople int default(1)
 )
 
 
-drop table review,bill,penthouse,suite,luxury,economy,foodreservation
+drop table review,bill,foodreservation
 drop table orders
 drop table service
 drop table booking 
