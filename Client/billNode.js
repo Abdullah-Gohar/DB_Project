@@ -38,7 +38,7 @@ async function getBillInfo(id) {
         for(i = 0;i<r.length;i++){
             rooms[i]=r[i].RNo
         }
-        //rooms_type = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
+        room_type = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
         //rooms_price = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
 
         //accomodation = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
