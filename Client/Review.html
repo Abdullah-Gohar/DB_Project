@@ -6,7 +6,8 @@
 </head>
 <link rel="stylesheet" href="ReviewStyles.css">
 <link rel="stylesheet" href="client_header_styles.css">
-<script src="test.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="Review.js"></script>
 
 <body>
     <!-- Title -->
@@ -50,38 +51,41 @@
     </div>
 
     <div class = "form-outer">
-        <form class = "form">
+        <div class = "form">
             <div class = "rating-stars">
                 <div class = "rating-title" >
                     Rating:
                 </div>
                 <div class="rate">
-                    <input type="radio" id="star5" name="rate" value="5" />
+                    <input type="radio" id="star5" name="star" value="5"/>
                     <label for="star5" title="text">5 stars</label>
-                    <input type="radio" id="star4" name="rate" value="4" />
+                    <input type="radio" id="star4" name="star" value="4" />
                     <label for="star4" title="text">4 stars</label>
-                    <input type="radio" id="star3" name="rate" value="3" />
+                    <input type="radio" id="star3" name="star" value="3" />
                     <label for="star3" title="text">3 stars</label>
-                    <input type="radio" id="star2" name="rate" value="2" />
+                    <input type="radio" id="star2" name="star" value="2" />
                     <label for="star2" title="text">2 stars</label>
-                    <input type="radio" id="star1" name="rate" value="1" />
+                    <input type="radio" id="star1" name="star" value="1" />
                     <label for="star1" title="text">1 star</label>
                 </div>
             </div>
 
-            <div class = Comments-Title>
+            <div class = "Comments-Title">
                 Comments
             </div>
             <div class = "Comments-Area">
-                <textarea rows = "15"  cols="120" placeholder="Leave a comment"></textarea>
+                <textarea id="comments"  rows = "15"  cols="120" placeholder="Leave a comment"></textarea>
             </div>
 
             <div class = "Submit-Div">
-                <button type = "submit" class= "Submit">Submit</button>
+                <button type = "submit" class= "Submit" onclick="submit_data()" >Submit</button>
             </div>
 
+            <div id="Error-Text" style="display: none;">
+                Please enter data in all fields
+            </div>
 
-        </form>
+        </div>
     </div>
 
 

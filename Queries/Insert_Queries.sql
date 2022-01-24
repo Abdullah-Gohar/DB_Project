@@ -8,11 +8,11 @@ Insert into Admin
 values(001),(002),(003),(004)
 
 Insert into Room
-values (1,Default,Default,Default),(2,Default,Default,Default),(3,Default,Default,Default),(4,Default,Default,Default)
-,(5,Default,Default,Default),(6,Default,Default,Default),(7,Default,Default,Default),(8,Default,Default,Default)
-,(9,Default,Default,Default),(10,Default,Default,Default),(11,Default,Default,Default),(12,Default,Default,Default),
-(13,Default,Default,Default),(14,Default,Default,Default),(15,Default,Default,Default),(16,Default,Default,Default),
-(17,Default,Default,Default)
+values (1,4,599.99,Default),(2,3,399.99,Default),(3,3,399.99,Default),(4,3,399.99,Default)
+,(5,3,399.99,Default),(6,1,299.99,Default),(7,1,299.99,Default),(8,1,299.99,Default)
+,(9,1,299.99,Default),(10,2,99.99,Default),(11,2,99.99,Default),(12,2,99.99,Default),
+(13,2,99.99,Default),(14,2,99.99,Default),(15,2,99.99,Default),(16,2,99.99,Default),
+(17,2,99.99,Default)
 
 Insert into Penthouse(RoomNo)
 values (17)
