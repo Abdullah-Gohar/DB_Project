@@ -18,6 +18,16 @@ const config = {
 //     trustServerCertificate: true
 // }
 
+// const config = {
+//     user: 'sa',
+//     password: '456',
+//     server: 'DESKTOP-584F9IS', // You can use 'localhost\\instance' to connect to named instance
+//     database: 'Resort_DB',
+//     port: 1433,
+//     trustServerCertificate: true
+// }
+
+
   
 
 async function getBookings() {

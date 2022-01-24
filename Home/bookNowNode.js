@@ -56,7 +56,6 @@ async function postClient(fname, lname, gender,email,phone,checkin,checkout,room
         rooms = (await pool.request().query("Select RoomNo as RNo from Room where RoomState = 0 and RoomFloor = "+room_type)).recordset
         console.log(UserName)
         for(i = 0;i<room_quantity;i++){
-            console.log("Update Room set RoomState = 1 where RoomNo = " + rooms[i].RNo)
             r = await pool.request().query("Insert into Booking "
                 +"values("+clientID+", "+rooms[i].RNo+", '"+checkin+"', '"+checkout+"')")
             r = await pool.request().query("Update Room set RoomState = 1 where RoomNo = "+rooms[i].RNo)
