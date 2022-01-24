@@ -5,7 +5,7 @@ function displayBill()
     document.getElementById("checkout").style.display="none";
 }
 function getBillInfo() { 
-    $.get("http://localhost:8080/getBillData?id=123",
+    $.get("http://localhost:8080/getBillData?id=189",
     {
     },
     function (data, status) {
@@ -14,6 +14,17 @@ function getBillInfo() {
         document.getElementById("BillName").innerHTML = data.client_name
         document.getElementById("BillNo").innerHTML = data.billno
         document.getElementById("Accomodation").innerHTML = "$"+(Math.round(data.accomodation * 100) / 100).toFixed(2);
+
+
+        cin_date = new Date(data.check_in)
+        c1 = cin_date.getDate() + "-" + (cin_date.getMonth() + 1) + "-" + cin_date.getFullYear()
+        cout_date = new Date(data.check_out)
+        c2 = cout_date.getDate() + "-" + (cout_date.getMonth() + 1) + "-" + cout_date.getFullYear() 
+
+
+        
+        document.getElementById("CheckInDate").innerHTML = c1
+        document.getElementById("CheckOutDate").innerHTML = c2
 
         document.getElementById("RoomPrice").innerHTML = "$" +data.room_price
 

@@ -6,8 +6,23 @@ Declare @reviewNo int;
 Select @reviewNo = Max(ReviewNo)+1 from Review;
 Insert into Review
 values(@reviewNo,@stars,@comments,@id)
+
+
+
+Update Client
+set ClientStatus  = 0
+where ClientId = id
+
 Go
 
 drop procedure postReview
 
 
+Select * from Bill
+
+Select * from Client
+where ClientStatus = 1
+
+Update Client
+set ClientStatus  = 1
+where ClientId = 124

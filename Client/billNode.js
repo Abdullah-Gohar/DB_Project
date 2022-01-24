@@ -68,8 +68,10 @@ async function getBillInfo(id) {
         room_price = await (await pool.request().query("SELECT RoomPrice as price from Room where RoomNo = "+rooms[0])).recordset[0].price
 
         date = await (await pool.request().query("SELECT DateDiff(day,CheckInDate,CheckOutDate) as diff from Booking where ClientID = " +id)).recordset[0].diff
-        console.log(date)
 
+        booking_dates = await (await pool.request().query("Select CheckInDate as cin, CheckOutDate as cout from Booking where ClientID = " + id)).recordset
+        check_in = booking_dates[0].cin
+        check_out = booking_dates[0].cout  
          
 
         //accomodation = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
@@ -103,11 +105,11 @@ async function getBillInfo(id) {
             cinema = "0"
         }
 
-        
+        food = food * date
         accomodation = room_price*date*rooms_booked
         data = {rBooked:rooms_booked, roomsNo: rooms, sFood:food, sTennis:tennis, sBowling:bowling,
              sCinema:cinema, roomFloor:room_type, room_price: room_price,  billno:billno,
-              client_name:full_name, accomodation:accomodation }
+              client_name:full_name, accomodation:accomodation, check_in:check_in, check_out:check_out }
 
 
 
