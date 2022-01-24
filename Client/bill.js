@@ -13,8 +13,9 @@ function getBillInfo() {
 
         document.getElementById("BillName").innerHTML = data.client_name
         document.getElementById("BillNo").innerHTML = data.billno
+        document.getElementById("Accomodation").innerHTML = "$"+(Math.round(data.accomodation * 100) / 100).toFixed(2);
 
-
+        document.getElementById("RoomPrice").innerHTML = "$" +data.room_price
 
         document.getElementById("RoomsBooked").innerHTML = data.rBooked
         r = data.roomsNo
@@ -24,10 +25,14 @@ function getBillInfo() {
             }
 
         document.getElementById("RoomNo").innerHTML = rooms
-        document.getElementById("Food").innerHTML = data.sFood
-        document.getElementById("Tennis").innerHTML = data.sTennis
-        document.getElementById("Bowling").innerHTML = data.sBowling
-        document.getElementById("Movies").innerHTML = data.sCinema
+        document.getElementById("Food").innerHTML = "$" +data.sFood
+        document.getElementById("Tennis").innerHTML = "$" +data.sTennis
+        document.getElementById("Bowling").innerHTML = "$" +data.sBowling
+        document.getElementById("Movies").innerHTML = "$" +data.sCinema
+        document.getElementById("RoomType").innerHTML = data.roomFloor
+
+        amount = parseFloat(data.sFood) + parseFloat(data.sTennis) + parseFloat(data.sBowling) + parseFloat(data.sCinema) + parseFloat(data.accomodation)
+        document.getElementById("BillAmount").innerHTML ="$" + (Math.round(amount * 100) / 100).toFixed(2)
 
     });
 
