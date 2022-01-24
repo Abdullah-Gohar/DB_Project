@@ -58,29 +58,7 @@ create table Booking(
 )
 
 
-create table Penthouse(
-	RoomNo int foreign key references room(RoomNo),
-	RoomPrice decimal(12,2) default(599.99),
-	RoomFloor int default(4)
-)
 
-create table Suite(
-	RoomNo int foreign key references room(RoomNo),
-	RoomPrice decimal(12,2) default(399.99),
-	RoomFloor int default(3)
-)
-
-create table Luxury(
-	RoomNo int foreign key references room(RoomNo),
-	RoomPrice decimal(12,2) default(299.99),
-	RoomFloor int default(1)
-)
-
-create table Economy(
-	RoomNo int foreign key references room(RoomNo),
-	RoomPrice decimal(12,2) default(99.99),
-	RoomFloor int default(2)
-)
 
 create table Service(
 	ServiceNo int Primary Key constraint ServiceNoRequired not null,
@@ -97,12 +75,12 @@ create table Orders(
 create table FoodReservation(
 	ClientID int Foreign Key references Client(ClientID),
 	FoodPrice decimal(12,2) default(19.99),
-	Primary Key(ClientNo),
+	Primary Key(ClientID),
 	FoodPeople int default(1)
 )
 
 
-drop table review,bill,penthouse,suite,luxury,economy,foodreservation
+drop table review,bill,foodreservation
 drop table orders
 drop table service
 drop table booking 
