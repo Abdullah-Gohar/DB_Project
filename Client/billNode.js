@@ -38,8 +38,24 @@ async function getBillInfo(id) {
         for(i = 0;i<r.length;i++){
             rooms[i]=r[i].RNo
         }
-        room_type = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
-        //rooms_price = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
+        room_floor = await (await pool.request().query("SELECT r.RoomFloor as roomFloor from Client as c inner join Booking as b on c.ClientId=b.ClientId inner join Room as r on b.RoomNo=r.RoomNo where c.ClientId = "+id)).recordset[0].roomFloor
+        if(room_floor==1)
+        {
+            room_type='Luxury'
+        }
+        else if(room_floor==2)
+        {
+            room_type='Economy'
+        }
+        else if(room_floor==3)
+        {
+            room_type='Suite'
+        }
+        else if(room_floor==4)
+        {
+            room_type='Penthouse'
+        }
+        room_price = await (await pool.request().query("SELECT RoomPrice as price from Room where RoomNo = "+rooms[0])).recordset[0].price
 
         //accomodation = await (await pool.request().query("Select RoomNo as RNo from Booking where ClientID = "+id)).recordset 
         food = await (await pool.request().query("Select FoodPrice*FoodPeople as totalFood from FoodReservation where ClientNo = "+id)).recordset
@@ -73,7 +89,7 @@ async function getBillInfo(id) {
         }
 
 
-        data = {rBooked:rooms_booked, roomsNo: rooms, sFood:food, sTennis:tennis, sBowling:bowling, sCinema:cinema }
+        data = {rBooked:rooms_booked, roomsNo: rooms, sFood:food, sTennis:tennis, sBowling:bowling, sCinema:cinema, roomFloor:room_type, room_price: room_price}
 
 
 

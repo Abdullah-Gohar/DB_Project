@@ -10,6 +10,9 @@ function getBillInfo() {
     {
     },
     function (data, status) {
+
+        document.getElementById("RoomPrice").innerHTML = data.room_price
+
         document.getElementById("RoomsBooked").innerHTML = data.rBooked
         r = data.roomsNo
             rooms = r[0]
@@ -22,6 +25,7 @@ function getBillInfo() {
         document.getElementById("Tennis").innerHTML = data.sTennis
         document.getElementById("Bowling").innerHTML = data.sBowling
         document.getElementById("Movies").innerHTML = data.sCinema
+        document.getElementById("RoomType").innerHTML = data.roomFloor
 
     });
 
