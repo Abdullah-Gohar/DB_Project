@@ -43,7 +43,6 @@ async function bookFood(ClientId,people) {
 
     try {
         let pool = await sql.connect(config)
-        console.log("Insert into FoodReservation values ("+ClientId+"  ,Default, "+ people+")")
 
         await pool.request().query("Insert into FoodReservation values ("+ClientId+"  ,Default, "+ people+")")
 
