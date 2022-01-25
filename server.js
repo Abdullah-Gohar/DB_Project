@@ -1,19 +1,30 @@
-// const config = {
-//     user: 'admin',
-//     password: '123',
-//     server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
-//     database: 'Resort_DB',
-//     port: 1433,
-//     trustServerCertificate: true
-// }
- const config = {
-    user: 'mishal',
+const config = {
+    user: 'admin',
     password: '123',
-    server: 'LAPTOP-3V03CSAF', // You can use 'localhost\\instance' to connect to named instance
+    server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
     database: 'Resort_DB',
     port: 1433,
     trustServerCertificate: true
- }
+}
+
+//  const config = {
+//     user: 'mishal',
+//     password: '123',
+//     server: 'LAPTOP-3V03CSAF', // You can use 'localhost\\instance' to connect to named instance
+//     database: 'Resort_DB',
+//     port: 1433,
+//     trustServerCertificate: true
+//  }
+
+ // const config = {
+//     user: 'admin1',
+//     password: '123',
+//     server: 'DESKTOP-IO2BR35',
+//     database: 'Resort_DB',
+//     port: 1433,
+//     trustServerCertificate: true
+//   }
+
 
 async function getBillInfo(id) {
     const sql = require('mssql')
