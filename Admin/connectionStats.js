@@ -8,6 +8,7 @@ function getData(){
                   document.getElementById("avgRating").innerHTML = data.av;
                   document.getElementById("noOfCustomers").innerHTML = data.btv;
                   document.getElementById("services").innerHTML = data.sv;
+                  console.log(data.fv+" "+data.bv)
                   document.getElementById("avgRatingmonth").innerHTML = data.arv;
                   var xValues = ["Free", "Booked"];
                   var yValues = [data.fv,data.bv];

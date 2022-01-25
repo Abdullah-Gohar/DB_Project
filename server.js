@@ -804,8 +804,8 @@ async function getAdminStats() {
         bookingThisMonthResult = await pool.request().query('SELECT COUNT(*) as countofBooking FROM BOOKING  WHERE Month(CheckInDate) = Month(GETDATE()) AND YEAR(CheckInDate) = YEAR(GETDATE())')
         servicesThisMonthResult = await pool.request().query('SELECT COUNT(*) as countofServices FROM ORDERS AS o INNER JOIN BOOKING AS B  ON B.ClientID =  o.ClientID WHERE Month(CheckInDate) = Month(GETDATE()) AND YEAR(CheckInDate) = YEAR(GETDATE())')
         averageRating = await pool.request().query('SELECT Cast(AVG(Cast((R.ReviewRating) as Decimal(3,2))) as Decimal(3,2)) as avgRatingThisMonth FROM Review as R  INNER JOIN BOoking as B ON R.ClientID = B.ClientID WHERE Month(B.CheckInDate) = Month(GETDATE()) AND YEAR(B.CheckInDate) = YEAR(GETDATE())')
-        freevalue = '<span>' + freeResult.recordset[0].freeRoom + '</span>'
-        bookedValue = '<span>' + bookedResult.recordset[0].bookedRoom + '</span>'
+        freevalue = freeResult.recordset[0].freeRoom
+        bookedValue = bookedResult.recordset[0].bookedRoom
         averageValue = '<span>' + averageResult.recordset[0].avg + '</span>'
         bookingThisMonthValue = '<span>' + bookingThisMonthResult.recordset[0].countofBooking + '</span>'
         ServicesThisMonthValue = '<span>' + servicesThisMonthResult.recordset[0].countofServices + '</span>'
