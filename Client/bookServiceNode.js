@@ -1,11 +1,24 @@
+// const config = {
+//     user: 'admin',
+//     password: '123',
+//     server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
+//     database: 'Resort_DB',
+//     port: 1433,
+//     trustServerCertificate: true
+// }
 const config = {
-    user: 'admin',
+    user: 'admin1',
     password: '123',
-    server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
+    server: 'DESKTOP-IO2BR35',
     database: 'Resort_DB',
     port: 1433,
     trustServerCertificate: true
-}
+  }
+
+
+
+
+  
 
 
 
@@ -43,6 +56,7 @@ async function bookFood(ClientId,people) {
 
     try {
         let pool = await sql.connect(config)
+       // console.log("Insert into FoodReservation values ("+ClientId+"  ,Default, "+ people+")")
 
         await pool.request().query("Insert into FoodReservation values ("+ClientId+"  ,Default, "+ people+")")
 
@@ -83,7 +97,7 @@ async function RefreshStats(id) {
                  Cinema = true
              }
          }
-        f =  await (await pool.request().query("select ClientNo from FoodReservation where ClientNo="+id)).recordset
+        f =  await (await pool.request().query("select ClientID from FoodReservation where ClientID="+id)).recordset
         if(f.length==1){
             Food=true
         }
