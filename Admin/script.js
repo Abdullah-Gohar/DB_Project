@@ -9,6 +9,9 @@ function getData(){
             
               
               new Chart("myChart", {
+                axisY:{
+                  interval:1,
+                },
                 type: "bar",
                 data: {
                   labels: xValues,
@@ -21,7 +24,10 @@ function getData(){
                   legend: {display: false},
                   scales: {
                     yAxes: [{
+                      
                         ticks: {
+                          stepSize:1,
+                           precision:0,
                             beginAtZero: true
                         }
                     }]
