@@ -15,7 +15,7 @@ function submit_data() {
         $.post("http://localhost:8080/submitReview",
             {
                 // id: sessionStorage.getItem(id),
-                id: 456,
+                id: sessionStorage.getItem("id"),
                 comments: document.getElementById("comments").value,
                 stars: $('input[name=star]:checked').val()
             },

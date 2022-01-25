@@ -5,7 +5,7 @@ function displayBill()
     document.getElementById("checkout").style.display="none";
 }
 function getBillInfo() { 
-    $.get("http://localhost:8080/getBillData?id=189",
+    $.get("http://localhost:8080/getBillData?id=" + sessionStorage.getItem("id"),
     {
     },
     function (data, status) {
