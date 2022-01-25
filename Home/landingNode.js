@@ -30,15 +30,15 @@ async function getReviews() {
     try {
         let pool = await sql.connect(config)
         let result
-        
-            // console.log("review")
+
+        // console.log("review")
         result = await pool.request().query('Select C.ClientFirstName as fname,C.ClientLastName as lname,R.ReviewRating as rating,R.ReviewComments as comments from Client as C '
-        +"inner join Review as R "
-        +" on R.ClientID = C.ClientID")
-        
+            + "inner join Review as R "
+            + " on R.ClientID = C.ClientID")
+
         let reviews = []
-        for(var i =0;i<4;i++){
-            reviews[i]=result.recordset[i]
+        for (var i = 0; i < 4; i++) {
+            reviews[i] = result.recordset[i]
             // console.log(result.recordset[i])
         }
         sql.close()

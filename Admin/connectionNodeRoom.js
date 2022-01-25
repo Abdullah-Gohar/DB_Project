@@ -1,22 +1,22 @@
-const config = {
-    user: 'admin1',
-    password: '123',
-    server: 'DESKTOP-IO2BR35',
-    database: 'Resort_DB',
-    port: 1433,
-    trustServerCertificate: true
-  }
-
-
-
 // const config = {
-//     user: 'admin',
+//     user: 'admin1',
 //     password: '123',
-//     server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
+//     server: 'DESKTOP-IO2BR35',
 //     database: 'Resort_DB',
 //     port: 1433,
 //     trustServerCertificate: true
-// }
+//   }
+
+
+
+const config = {
+    user: 'admin',
+    password: '123',
+    server: 'DESKTOP-TA4RQON', // You can use 'localhost\\instance' to connect to named instance
+    database: 'Resort_DB',
+    port: 1433,
+    trustServerCertificate: true
+}
 
 // const config = {
 //     user: 'sa',
@@ -70,7 +70,7 @@ async function getRoom(id){
   })
   try {
     let pool = await sql.connect(config)
-    roomState = await pool.request().query('select RoomState as State from Room  WHERE RoomNo ='+id)
+    roomState = await pool.request().query('select RoomState as State from Room WHERE RoomNo ='+id)
     roomRating = await pool.request().query(' SELECT Cast(AVG(Cast((R.ReviewRating) as Decimal(3,2))) as Decimal(3,2)) as rating FROM Review as R INNER JOIN Booking as B  on R.ClientID = B.ClientID  WHERE B.RoomNo = '+id+'Group BY RoomNo')
    // console.log(roomState.recordset[0].State);
     let roomStateSpan = '';

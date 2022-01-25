@@ -17,6 +17,8 @@ function submit(){
                 else{
                     window.location.href = "../Admin/adminHome.html"
                 }
+                sessionStorage.setItem("id", data.id)
+
             }
             else {
                 // window.alert("Invalid Data")
