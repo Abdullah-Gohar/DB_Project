@@ -9,6 +9,7 @@ function getData(){
                   document.getElementById("noOfCustomers").innerHTML = data.btv;
                   document.getElementById("services").innerHTML = data.sv;
                   document.getElementById("avgRatingmonth").innerHTML = data.arv;
+                  console.log(data.bv)
                   var xValues = ["Free", "Booked"];
                   var yValues = [data.fv,data.bv];
                   var barColors = [
