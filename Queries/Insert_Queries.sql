@@ -15,7 +15,7 @@ values (1,4,599.99,Default),(2,3,399.99,Default),(3,3,399.99,Default),(4,3,399.9
 (17,2,99.99,Default)
 
 
-Insert into Service()
+Insert into Service
 values (1,59.99,'Tennis'),(2,39.99,'Bowling'),(3,19.99,'Movies')
 
 
